@@ -1,13 +1,15 @@
-import heroImage from '../assets/images/pic_seaone.jpg';
+import heroImage from '../assets/images/pic_sea2.jpg';
 import './Hero.css';
 
 function Hero() {
     return (
         <section className="hero" style={{ backgroundImage: `url(${heroImage})`}}>
-            <div className='hero-overlay'>
-                <h2>Your home in Sardinia🌊</h2>
+            <div className="hero-overlay"></div>
+
+            <div className="hero-content">
+                <h1>Your home in Sardinia🌊</h1>
                 <p>Cozy accomodation near the sea</p>
-                <button>Book your stay</button>
+                <a href="#contact" className="hero-btn">Book your stay</a>
             </div>
         </section>
     );

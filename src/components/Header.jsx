@@ -17,7 +17,7 @@ function Header() {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className='header-inner'>
                 <div className='logo'>
-                    <img src={logoImage} alt="Casa Nina logo" />
+                    <a href="#top"><img src={logoImage} alt="Casa Nina logo" /></a>
                     <span className='logoName'>Casa Nina</span>
                 </div>
 
