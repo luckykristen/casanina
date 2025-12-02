@@ -1,0 +1,41 @@
+.location {
+    background-color: #f6f8f7;
+}
+
+.location-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.location-list {
+    list-style: none;
+    padding: 0;
+    margin: 32px auto 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    max-width: 420px;
+}
+
+.location-list::before {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.location-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 0.95rem;
+    color: var(--text-muted);
+
+    justify-content: center;
+}

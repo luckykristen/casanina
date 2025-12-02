@@ -1,0 +1,60 @@
+.calendar-wrapper {
+    margin: 40px 0;
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/*celý kalendář*/
+.react-calendar {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    border: none;
+    padding: 10px;
+}
+
+/*měsíc v kalendáři*/
+.react-calendar__navigation button {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/*běžné dny*/
+.react-calendar__tile {
+    border-radius: 12px;
+    padding: 12px 6px;
+    transition: all 0.2s ease;
+}
+
+/*hover jako Airbnb*/
+.react-calendar__tile:enabled:hover {
+    background: #f2f2f2;
+}
+
+/*vybraný datum*/
+.react-calendar__tile--active {
+    background: rgb(179, 179, 60);
+    color: black;
+    border-radius: 12px;
+}
+
+/*dnešní den*/
+.react-calendar__tile--now {
+    background: #e6e6e6;
+    font-weight: 600;
+}
+
+/*obsazené dny*/
+.booked-day {
+    background: rgba(255, 0, 0, 0.786);
+    color: #b0b0b0;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.selected-date {
+    margin-top: 15px;
+    font-size: 0.95rem;
+}

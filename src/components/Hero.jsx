@@ -1,6 +1,6 @@
-import heroImage from '../assets/images/pic_sea2.jpg';
 import './Hero.css';
 import { useEffect, useState } from 'react';
+import logoImage from '../assets/images/logo_casanina.jpg';
 
 function Hero() {
     const [visible, setVisible] = useState(false);
@@ -9,15 +9,16 @@ function Hero() {
         setVisible(true);
     }, []);
     return (
-        <section className="hero" style={{ backgroundImage: `url(${heroImage})`}}>
+        <section className="hero alt">
+            <div className='hero-bg'></div>
 
             <div className={`hero-content ${visible ? "visible" : ""}`}>
-                <h1>Your home in Sardinia🌊</h1>
-                <p>Cozy accomodation near the sea</p>
-                <a href="#contact" className="hero-btn">Book your stay</a>
+                <a href="#top"><img src={logoImage} alt="Casa Nina logo" className='logo-img' /></a>
+                <h1>Váš domov na Sardínii🌊</h1>
+                <p>Útulné ubytování poblíž moře</p>
+                <a href="#contact" className="hero-btn">Zarezervujte si svůj termín</a>
             </div>
 
-            <div className="hero-overlay"></div>
         </section>
     );
 

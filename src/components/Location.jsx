@@ -1,15 +1,30 @@
+import './Location.css'
+import { useRef } from "react";
+import { useReveal } from "../components/useReveal";
+
 function Location() {
+        const sectionRef = useRef(null);
+        useReveal(sectionRef);
     return (
-        <section className="section location">
-            <h2>Location</h2>
+        <section className="section location alt" id='location' ref={sectionRef}>
+            <div className='section-inner'>
+                <h2>Lokalita</h2>
             <p>
-                Casa Nina is located in a quiet area of southern Sardinia,
-                close to beautiful beaches, scenic coastal walks,
-                and traditional Sardinian towns.
+                Casa Nina se nachází v klidné části jižní Sardínie, 
+                v blízkosti krásných pláží, 
+                pobřežních stezek a tradičních sardinských městeček.
             </p>
             <p>
-                The perfect base to explore the island while enjoying peace and privacy.
+                Ideální místo pro objevování ostrova, kde si zároveň užijete klid a soukromí.
             </p>
+
+            <ul className="location-list">
+                <li>🌊 Pláž: 5 minut chůze</li>
+                <li>🍝 Restaurace & kavárny: 5–10 minut pěšky</li>
+                <li>🛒 Obchody: v docházkové vzdálenosti</li>
+                <li>🚗 Letiště Cagliari: cca 1 hodina</li>
+            </ul>
+            </div>
         </section>
     );
 }

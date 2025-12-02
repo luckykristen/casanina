@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import CalendarPage from "./pages/CalendarPage"
 import './App.css'
 import './index.css'
 import Header from './components/Header'
@@ -14,9 +16,14 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
+    <BrowserRouter>
+    <Routes>
+      <Route 
+      path='/'
+      element={
     <>
-    <Header />
     <main>
+    <Header />
     <Hero /> 
 
     <Accommodation />
@@ -25,9 +32,14 @@ function App() {
     <Location />
     <CTA />
 
-    </main>
     <Footer />
+    </main>
     </>
+    }
+    />
+      <Route path="/kalendar" element={<CalendarPage />} />
+    </Routes>
+  </BrowserRouter>
   );
 }
 
