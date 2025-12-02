@@ -11,17 +11,22 @@ import Highlights from './components/Highlights'
 import Location from './components/Location'
 import CTA from './components/CTA'
 import Gallery from './components/Gallery'
+import ChatBox from "./components/ChatBox"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
+    <>
+    { /*Casa Nina */}
+    <ChatBox />
+    
     <BrowserRouter>
     <Routes>
       <Route 
       path='/'
       element={
-    <>
+
     <main>
     <Header />
     <Hero /> 
@@ -34,12 +39,12 @@ function App() {
 
     <Footer />
     </main>
-    </>
     }
     />
       <Route path="/kalendar" element={<CalendarPage />} />
     </Routes>
   </BrowserRouter>
+  </>
   );
 }
 

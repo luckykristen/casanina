@@ -11,13 +11,14 @@ function BookingCalendar() {
 
     useEffect(() => {
         const fetchOccupied = async () => {
-            const query = `*[_type == "occupied"]{
+            const query = `*[_type == "booking"]{
             from,
             to
             }
         `;
 
         const data = await sanity.fetch(query);
+        console.log("SANITY DATA:", data);
 
         const days = [];
 
