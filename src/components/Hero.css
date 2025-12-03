@@ -7,6 +7,15 @@
   margin-left: calc(-50vw + 50%); 
 }
 
+.hero-image {
+  min-height: 100vh;
+  background-image: url("../assets/images/casa-nina-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 .hero--video {
   position: relative;
   height: 90vh;
@@ -27,8 +36,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom
-    rgba(0,0,0,0.45)
-    rgba(0,0,0,0.65)
+    rgba(0,0,0,0.50)
+    rgba(0,0,0,0.70)
   );
   z-index: 1;
 }

@@ -1,20 +1,10 @@
 import './Hero.css';
 import { useEffect, useState } from 'react';
-import video from "../assets/calasetta-lighthouse.mp4"
 
 
 function Hero() {
 return(
-<section className="hero hero--video">
-  <video
-    className="hero-video"
-    autoPlay
-    muted
-    loop
-    playsInline
-  >
-    <source src={video} type="video/mp4" />
-  </video>
+<section className="hero hero-image">
 
   <div className="hero-overlay"></div>
 
