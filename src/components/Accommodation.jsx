@@ -33,10 +33,11 @@ function Accommodation() {
                         <ul className="location-list">
                             <h3>Základní informace</h3>
                             <li>Velikost ubytování: 88m2</li>
-                            <li>Kapacita: až 6 osob</li>
-                            <li>Dispozice: 2 ložnice, obývací prostor s plně vybavenou kuchyňkou, 3 koupelny - každá s Wc a bidetem</li>
+                            <li>Kapacita: maximum 6 osob</li>
+                            <li>Dispozice: 2 samostatné ložnice každá se svou koupelnou a WC</li>
+                            <li>obývací prostor s plně vybavenou kuchyňkou a rozkládacím gaučem</li>
                             <li>Klimatizace ve všech pokojích</li>
-                            <li>Exteriér: soukromá terasa s horní ložnice, zahrada s krbem</li>
+                            <li>Exteriér: soukromá terasa s horní ložnice, zahrada s grilem</li>
                         </ul>
             </div>
         </section>

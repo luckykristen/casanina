@@ -10,9 +10,9 @@ function Location() {
             <div className='section-inner'>
                 <h2>Lokalita</h2>
             <p>
-                Casa Nina se nachází v klidné části jižní Sardínie, 
+                Domeček Casa Nina se nachází v klidné části jižní Sardínie, v malebném městečku Calasetta
                 v blízkosti krásných pláží, 
-                pobřežních stezek a tradičních sardinských městeček.
+                pobřežních stezek a tradičních sardinských restaurací.
             </p>
             <p>
                 Ideální místo pro objevování ostrova, kde si zároveň užijete klid a soukromí.
@@ -20,7 +20,7 @@ function Location() {
 
             <ul className="location-list">
                 <li>🌊 Pláž: 5 minut chůze</li>
-                <li>🍝 Restaurace & kavárny: 5–10 minut pěšky</li>
+                <li>🍝 Restaurace & kavárny: 5–10 minut chůze</li>
                 <li>🛒 Obchody: v docházkové vzdálenosti</li>
                 <li>🚗 Letiště Cagliari: cca 1 hodina</li>
             </ul>

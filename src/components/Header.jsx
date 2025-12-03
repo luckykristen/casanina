@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ onOpenPrice}) {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -19,11 +20,15 @@ function Header() {
                     <a href="#top"><span className="logoName">Casa Nina</span></a>
                 </div>
 
-            <nav className='nav'>
-                <a href="#about">O ubytování</a>
-                <a href="#gallery">Galerie</a>
-                <a href="#contact">Volné termíny</a>
-            </nav>
+                <nav className='nav'>
+                    <a href="#about">O ubytování</a>
+                    <a href="#gallery">Galerie</a>
+                    <a href="#information">Informace k pobytu</a>
+                    <a href="#contact">Tipy na výlet</a>
+                    <Link to="/transfer">Letištní transfer</Link>
+
+                    <button className='price-btn' onClick={onOpenPrice}>Ceník</button>
+                </nav>
             </div>
         </header>
     );

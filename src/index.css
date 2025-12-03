@@ -87,13 +87,109 @@ h1, h2, h3 {
     text-align: center;
 }
 
-#about,
-#gallery,
-#contact {
-    scroll-margin-top: 150px;
+/*CENÍK*/
+
+.price-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 2000;
+
+    display: flex;
+    justify-content: flex-end;
+
+    animation: fadeIn 0.3s ease;
 }
 
+.price-overlay.closing {
+    animation: fadeOut 0.3s ease forwards;
+}
 
+.price-drawer { /*samotný panel*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    max-width: 100%;
+    height: 100%;
+    background: #faf9f7;
+    padding: 24px 24px 24px;
+    box-shadow: -8px 0 30px rgba(0,0,0,0.25);
+
+    animation: slideIn 0.3s ease-out;
+
+    display: flex;
+    flex-direction: column;
+
+    border-left: 1px solid #eee;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+.price-grid {
+    margin-bottom: 50px;
+}
+
+.price-drawer .close {
+    align-self: flex-end;
+    background: transparent;
+    border: #7d231d 1px solid;
+    border-radius: 10%;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.price-drawer h2 {
+    margin-top: 12px;
+    margin-bottom: 24px;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.price-drawer p {
+    font-size: 20px;
+}
+
+/*TRANSFER*/
+
+
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
 
 
 @media (max-width: 768px) {

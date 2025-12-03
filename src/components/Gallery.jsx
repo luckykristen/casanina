@@ -39,6 +39,9 @@ function Gallery() {
                     <img src={img4} alt="Casa Nina terrace" />
                     <img src={img5} alt="Sea view near Casa Nina" />
                     <img src={img6} alt="Sardinia coast" />
+                    <img src={img4} alt="Casa Nina terrace" />
+                    <img src={img5} alt="Sea view near Casa Nina" />
+                    <img src={img6} alt="Sardinia coast" />
                 </div>
             </div>
         

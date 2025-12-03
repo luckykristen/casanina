@@ -12,6 +12,9 @@
     overflow-x: auto;
     padding-bottom: 12px;
     scroll-snap-type: x mandatory;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-slider img {
@@ -25,6 +28,6 @@
 }
 
 .gallery-slider img:hover {
-    transform: scale(1.03);
+    transform: scale(1.5);
 }
 
