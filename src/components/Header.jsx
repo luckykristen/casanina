@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Header({ onOpenPrice}) {
     const [scrolled, setScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const onScroll = () => {
@@ -13,6 +14,7 @@ function Header({ onOpenPrice}) {
         window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
+
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className='header-inner'>
@@ -20,12 +22,21 @@ function Header({ onOpenPrice}) {
                     <a href="#top"><span className="logoName">Casa Nina</span></a>
                 </div>
 
-                <nav className='nav'>
-                    <a href="#about">O ubytování</a>
-                    <a href="#gallery">Galerie</a>
-                    <a href="#information">Informace k pobytu</a>
-                    <a href="#contact">Tipy na výlet</a>
-                    <Link to="/transfer">Letištní transfer</Link>
+                <button 
+                className={`burger ${isOpen ? "open" : ""}`} 
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label='Menu'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav className={`nav ${isOpen ? "open" : ""}`}>
+                    <a href="#about" onClick={() => setIsOpen(false)}>O ubytování</a>
+                    <a href="#gallery" onClick={() => setIsOpen(false)}>Galerie</a>
+                    <a href="#information" onClick={() => setIsOpen(false)}>Informace k pobytu</a>
+                    <a href="#tips" onClick={() => setIsOpen(false)}>Tipy na výlet</a>
+                    <Link to="/transfer" onClick={() => setIsOpen(false)}>Letištní transfer</Link>
 
                     <button className='price-btn' onClick={onOpenPrice}>Ceník</button>
                 </nav>

@@ -3,7 +3,7 @@
   height: 85vh;
   min-height: 560px;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   margin-left: calc(-50vw + 50%); 
 }
 
@@ -16,37 +16,23 @@
   position: relative;
 }
 
-.hero--video {
-  position: relative;
-  height: 90vh;
-  min-height: 560px;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom
-    rgba(0,0,0,0.50)
-    rgba(0,0,0,0.70)
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.6),
   );
   z-index: 1;
 }
 
 .hero-text {
+  animation: fadeUp 1s ease both;
   position: relative;
   z-index: 2;
 
-  max-width: 720px;
+  max-width: 600px;
   padding: 0 80px;
   color: white;
 
@@ -55,22 +41,23 @@
   justify-content: center;
 
   height: 100%;
+  margin-top: 7vh;
 }
 
 .hero-eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.18rem;
-  font-size: 0.75rem;
-  opacity: 0.85;
-  margin-bottom: 18px;
+  letter-spacing: 0.2rem;
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
 .hero h1 {
   font-family: "Playfair Display", serif;
-  font-size: 4rem;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 500;
   line-height: 1.1;
   margin-bottom: 24px;
+  letter-spacing: -0.5px;
 }
 
 .hero p {
@@ -101,27 +88,70 @@
   font-size: 0.9rem;
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 @media (max-width: 768px) {
 
-  .hero-video {
-    display: none;
+  .hero {
+    min-height: 72vh;
   }
 
-  .hero--video {
-    background: url("/src/assets/images/pic_seaone.jpg") center / cover no-repeat;
-    width: 100vw;
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.7)
+    );
   }
 
   .hero-text {
-    padding: 0 24px;
+    justify-content: flex-end;
+    padding-bottom: 80px;
+    margin-top: 0;
   }
 
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #f5f3ef;
+    text-shadow: 25px 60px 90px rgba(0,0,0,0.25);
   }
 
   .hero p {
     font-size: 1rem;
+    max-width: 100%;
+    font-style: italic;
   }
+
+  .hero-actions {
+    margin-top: 16px;
+  }
+
+  .btn-primary {
+    padding: 14px 22px;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+   .hero {
+        min-height: 72vh;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+
+    section:not(.hero) {
+        margin-top: 0;
+        padding-top: 32px;
+    }
 }
