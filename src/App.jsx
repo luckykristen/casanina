@@ -11,10 +11,10 @@ import Highlights from './components/Highlights'
 import Location from './components/Location'
 import CTA from './components/CTA'
 import Gallery from './components/Gallery'
-import ChatBox from "./components/ChatBox"
 import Information from './components/Information'
 import Price from './pages/Price.jsx'
 import Transfer from './pages/Transfer.jsx'
+import Tips from './pages/Tips.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,7 +30,6 @@ function App() {
       path='/'
       element={
     <main>
-      <ChatBox />
       <Header onOpenPrice={() => setIsPriceOpen(true)} />
       <Hero /> 
 
@@ -38,6 +37,7 @@ function App() {
       <Highlights />
       <Gallery />
       <Information />
+      
       <Location />
       <CTA />
 
@@ -48,6 +48,7 @@ function App() {
       <Route path="/kalendar" element={<CalendarPage />} />
       <Route path="/price" element={<Price />} />
       <Route path='/transfer' element={<Transfer />} />
+      <Route path='/tips' element={<Tips />} />
     </Routes>
 
     {isPriceOpen && (

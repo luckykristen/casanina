@@ -1,5 +1,5 @@
 .gallery-section {
-    margin-top: 64px;
+    margin-top: 60px;
 }
 
 .gallery-section h3 {
@@ -12,7 +12,7 @@
     overflow-x: auto;
     padding-bottom: 12px;
     scroll-snap-type: x mandatory;
-    height: 500px;
+    height: 300px;
     align-items: center;
     justify-content: center;
 }
@@ -28,6 +28,6 @@
 }
 
 .gallery-slider img:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 

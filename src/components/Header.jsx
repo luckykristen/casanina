@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import imageLogo from "../assets/images/logo_casanina.jpg"
 
 function Header({ onOpenPrice}) {
     const [scrolled, setScrolled] = useState(false);
@@ -19,24 +20,15 @@ function Header({ onOpenPrice}) {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className='header-inner'>
                 <div className='logo'>
-                    <a href="#top"><span className="logoName">Casa Nina</span></a>
+                    <a href="#top"><img src={imageLogo} alt="logo" /></a>
                 </div>
-
-                <button 
-                className={`burger ${isOpen ? "open" : ""}`} 
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label='Menu'>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
 
                 <nav className={`nav ${isOpen ? "open" : ""}`}>
                     <a href="#about" onClick={() => setIsOpen(false)}>O ubytování</a>
                     <a href="#gallery" onClick={() => setIsOpen(false)}>Galerie</a>
                     <a href="#information" onClick={() => setIsOpen(false)}>Informace k pobytu</a>
-                    <a href="#tips" onClick={() => setIsOpen(false)}>Tipy na výlet</a>
-                    <Link to="/transfer" onClick={() => setIsOpen(false)}>Letištní transfer</Link>
+                    <Link to="/tips" onClick={() => setIsOpen(false)} target='_blank'>Tipy na výlet</Link>
+                    <Link to="/transfer" onClick={() => setIsOpen(false)} target='_blank'>Transfer & pronájem vozu</Link>
 
                     <button className='price-btn' onClick={onOpenPrice}>Ceník</button>
                 </nav>

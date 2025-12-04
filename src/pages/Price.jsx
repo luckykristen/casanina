@@ -36,19 +36,23 @@ function Price({ onClose }) {
 
                 <div className="price-grid">
                     <h3>Pronájem auta pro 5 osob:</h3>
-                    <p>🌴červenec a srpen: 45€/den</p>
-                    <p>🌊ostatní měsíce: 35€/den</p>
+                    <p>🌴červenec a srpen: 40€/den</p>
+                    <p>🌊ostatní měsíce: 30€/den</p>
                 </div>
 
                 <div className="price-grid">
                     <h3>Transfer z a na letiště Cagliari</h3>
-                    <p>auto pro 6 lidí: <strong>125€</strong> obousměrná cesta</p>
-                    <p>vozík pro 3 psy: 20€ za 1 psa</p>
-                    <p>Ostatní transfery dle domluvy</p>
+                    <p>• Auto pro 6 lidí: <strong>150€</strong> obousměrná cesta.</p>
+                    <p>• Thermo vozík pro 3 psy: 20€ za 1 psa.</p>
+                    <p>• Transfery z jiných míst dle domluvy.</p>
+                    <p>• Výlety - základní sazba: 150€ na den s nájezdem do 150 km.
+                        Při vyšším nájezdu km cena dle domluvy. 
+                    </p>
+                    <p></p>
                 </div>
 
                 <div className="price-grid">
-                    <p>🐶 Zvíčecí kamarádi v ceně ubytování.</p>
+                    <p>🐶 Zvířecí kamarádi v ceně ubytování.</p>
                     <p>K dispozici v ceně šnorchlovací sada, plážové slunečníky a křesílka.</p>
                 </div>
             </div>
