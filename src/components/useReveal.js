@@ -2,17 +2,23 @@ import { useEffect } from "react";
 
 export function useReveal(ref) {
     useEffect(() => {
+        const el = ref?.current;
+        if (!el) return;
+        
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.targert);
+                    el.classList.add("reveal");
+                    observer.unobserve(el);
                 }
             },
-            { threshold: 0.5 }
+            { threshold: 0.15 }
         );
 
-        if (ref.current) observer.observe(ref.current);
-        return () => observer.disconnect();
+        observer.observe(el);
+
+        return () => {
+            observer.disconnect();
+        };
     }, [ref]);
 }

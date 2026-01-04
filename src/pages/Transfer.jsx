@@ -23,7 +23,7 @@ function Transfer() {
             </Link>
         <div className="transfer-grid">
            
-            <h2>Informace o transferu</h2>
+            <h2>✈︎ Informace o transferu</h2>
             <p>Pro naše hosty nabízíme transfer z letiště Elmas v Cagliari na ubytování a zpět.</p>
             <div className="transfer-image-grid">
                 <img src={imageOne} alt="car" />
@@ -37,7 +37,8 @@ function Transfer() {
                 <img src={imageOne} alt="car" />
             </div>
             <p>Transfer nabízíme i pro Vaše mazlíčky thermo vozíkem pro psy.</p>
-            <p>Pro skupinku max. 6 lidí je možné si objednat auto na výlety, kam Vás doveze náš řidič.</p>
+            <br />
+            <p>🗺️ Pro skupinku max. 6 lidí je možné si objednat auto na výlety, kam Vás doveze náš řidič.</p>
             <p>Cena viz. ceník na hlavní stránce.</p>
         </div>
         </>

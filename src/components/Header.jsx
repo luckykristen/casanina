@@ -16,6 +16,23 @@ function Header({ onOpenPrice}) {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    const handleNav = (e, id) => {
+        e.preventDefault();
+        setIsOpen(false);
+
+        const el = document.getElementById(id);
+        if (!el) return;
+        
+            el.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest',
+             });
+
+             history.replaceState(null, '', `#${id}`);
+    };
+
+
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className='header-inner'>
@@ -24,17 +41,19 @@ function Header({ onOpenPrice}) {
                 </div>
 
                 <nav className={`nav ${isOpen ? "open" : ""}`}>
-                    <a href="#about" onClick={() => setIsOpen(false)}>O ubytování</a>
-                    <a href="#gallery" onClick={() => setIsOpen(false)}>Galerie</a>
-                    <a href="#information" onClick={() => setIsOpen(false)}>Informace k pobytu</a>
-                    <Link to="/tips" onClick={() => setIsOpen(false)} target='_blank'>Tipy na výlet</Link>
-                    <Link to="/transfer" onClick={() => setIsOpen(false)} target='_blank'>Transfer & pronájem vozu</Link>
+                    <a href="#about" onClick={(e) => handleNav(e, "about")}>O ubytování</a>
+                    <a href="#gallery" onClick={(e) => handleNav(e, "gallery")}>Galerie</a>
+                    <a href="#information" onClick={(e) => handleNav(e, "information")}>Informace</a>
+                    <a href="#location" onClick={(e) => handleNav(e, "location")}>Lokalita</a>
+
+                    <Link to="/tips" onClick={(e) => setIsOpen(false)} target='_blank'>Tipy na výlet</Link>
+                    <Link to="/transfer" onClick={(e) => setIsOpen(false)} target='_blank'>Transfer & pronájem vozu</Link>
 
                     <button className='price-btn' onClick={onOpenPrice}>Ceník</button>
                 </nav>
             </div>
         </header>
     );
-}
+};
 
 export default Header;
