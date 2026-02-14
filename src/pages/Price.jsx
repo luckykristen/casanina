@@ -26,18 +26,12 @@ function Price({ onClose }) {
 
                 <button className="close" onClick={handleClose}>x</button>
 
-                <h2>Ceník pro rok 2026</h2>
+                <h2>Ceník</h2>
                 <div className="price-grid">
-                    <h3>Pronájem celého domu (max. 6 osob):</h3>
+                    <h3>Pronájem celého domu (1 - 8 osob):</h3>
                     <p>🌴červenec a srpen: 180€/noc/dům</p>
                     <p>🌊červen a září: 130€/noc/dům</p>
                     <p>🌸květen a říjen: 90€/noc/dům</p>
-                </div>
-
-                <div className="price-grid">
-                    <h3>Pronájem auta pro 5 osob:</h3>
-                    <p>🌴červenec a srpen: 40€/den</p>
-                    <p>🌊ostatní měsíce: 30€/den</p>
                 </div>
 
                 <div className="price-grid">
@@ -53,7 +47,6 @@ function Price({ onClose }) {
 
                 <div className="price-grid">
                     <p>🐶 Zvířecí kamarádi v ceně ubytování.</p>
-                    <p>K dispozici v ceně šnorchlovací sada, plážové slunečníky a křesílka.</p>
                 </div>
             </div>
         </div>

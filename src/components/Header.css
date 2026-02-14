@@ -4,22 +4,43 @@ html {
 
 .header { /*celý navbar*/
     position: fixed;
-    top: 0;
     z-index: 1000;
+    top: 0;
     left: 0;
     right: 0;
     max-width: 100%;
 
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
     background-color: rgba(195, 162, 109, 0.653);
     backdrop-filter: blur(4px);
 }
+
+    .header.scrolled {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 9999;
+    } 
+
+    .header.scrolled .header-inner {
+        padding: 8px 20px;
+        max-height: 80px;
+        border-radius: 16px;
+    }
+
+    .header.scrolled .nav a {
+        font-size: 1rem;
+        transition: 0.3s ease;
+    }
+
+    .header.scrolled .header-inner img {
+        width: 80px;
+        transition: width 0.3s ease;
+    }
 
 .header-inner { /*text v navbar*/
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    height: auto;
+    height: 150px;
 
     display: flex;
     justify-content: space-between;

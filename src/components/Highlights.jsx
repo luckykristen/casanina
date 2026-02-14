@@ -12,7 +12,7 @@ function Highlights() {
 
                 <div className="highlights-grid">
                     <div className="highlight">🌊 Pár minut chůze k moři</div>
-                    <div className="highlight">🏡 Soukromá terasa s venkovním grilem</div>
+                    <div className="highlight">🏡 Soukromý dvorek s venkovním grilem</div>
                     <div className="highlight">🌅 Klidná a tichá lokalita</div>
                     <div className="highlight">🚗 Parkování zdarma</div>
                     <div className="highlight">📶 Rychlé wi-fi zdarma</div>

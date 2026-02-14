@@ -31,9 +31,6 @@ function Information() {
                     • Samozřejmostí jsou ručníky a vybavené koupelny veškerou hygienou. Fén a žehlička jsou také k dispozici.
                 </p>
                 <p>
-                    • K dispozici plážové vybavení: 2x plážová křesílka, 1x slunečník a šnorchlovací sada.
-                </p>
-                <p>
                     • Ubytování je pet-friendly bez ohledu na velikosti či druhu domácího zvířete. Zvířecí kamarádi jsou v ceně ubytování.
                 </p>
                 <p>

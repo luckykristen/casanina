@@ -170,7 +170,7 @@ function CalendarPage() {
                 </div>
 
                 <div style={{ marginTop: "10px" }}>
-                    <p><strong>* Máte zájem o půjčení auta pro 5 osob?</strong></p>
+                    <p><strong>* Máte zájem o půjčení auta?</strong></p>
 
                     <label>
                         <input 
