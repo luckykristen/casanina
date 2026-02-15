@@ -1,4 +1,4 @@
-import './Location.css'
+import './Location.css';
 import { useRef } from "react";
 import { useReveal } from "../components/useReveal";
 

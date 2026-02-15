@@ -48,6 +48,36 @@ function Price({ onClose }) {
                 <div className="price-grid">
                     <p>🐶 Zvířecí kamarádi v ceně ubytování.</p>
                 </div>
+
+                <div className="price-grid">
+                    <p><strong>Podmínkou závazné rezervace je úhrada zálohy 30% z ceny na účet.</strong> </p>
+                    <p>Po zaplacení zálohy Vám přijde na email potvrzení o obdržení zálohy.</p>
+                    <p>Číslo bankovního účtu Vám sdělíme do soukromé zprávy.</p>
+                    <p>Doplatek ceny za pobyt doplatit minimálně měsíc před Vaším příjezdem na účet, nebo je možnost doplatit v hotovosti při předání klíčů v den Vašeho příjezdu.</p>
+                    <p>Měsíc před příjezdem si zavoláme pro potvrzení termínu a způsobu doplacení.</p>
+                    <p><strong>VRATNÁ KAUCE: 200€. Při předání apartmánu budeme požadovat uhradit vratnou kauci. Bude vracená při Vašem odjezdu osobně, nebo na Váš účet do 7 dnů od Vašeho odjezdu, v případě, že nebudou žádné způsobené škody.</strong></p>
+                </div>
+
+                <div className="price-grid">
+                    <h3 className="price_h3"><strong>STORNO A VRÁCENÍ PENĚZ</strong></h3>
+                    <p>• Rezervace je závazná po uhrazení zálohy 30% z ceny pobytu.</p>
+                    <p>• Při zrušení pobytu <strong>více</strong> než 14 dní před příjezdem <strong>vracíme uhrazenou zálohu</strong>.</p>
+                    <p>• Při zrušení pobytu <strong>méně</strong> než 14 dní před příjezdem uhrazená záloha <strong>se nevrací</strong>.</p>
+                    <p>• V případě předčasného ukončení pobytu nevzniká nárok na vrácení peněz.</p>
+                </div>
+
+                <div className="price-grid">
+                    <h3 className="price_h3">Doklady totožnosti</h3>
+                    <p>• Každý host je povinen při příjezdu předložit platný doklad totožnosti - občanský průkaz nebo cestovní pás.</p>
+                    <p>• Údaje z dokladů jsou povinně hlášeny do italského ubytovacího systému dle platné legislativy.</p>
+                    <p>• Bez platného dokladu totožnosti <strong>není možné ubytování poskytnout</strong>!</p>
+                </div>
+
+                <div>
+                    <h3 className="price_h3">Pobytová taxa</h3>
+                    <p>Při příjezdu </p>
+                </div>
+
             </div>
         </div>
     )

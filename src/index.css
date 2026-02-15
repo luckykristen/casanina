@@ -104,9 +104,6 @@ h1, h2, h3 {
     background: rgba(0,0,0,0.4);
     z-index: 2000;
 
-    display: flex;
-    justify-content: flex-end;
-
     animation: fadeIn 0.3s ease;
 }
 
@@ -115,12 +112,12 @@ h1, h2, h3 {
 }
 
 .price-drawer { /*samotný panel*/
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 600px;
     max-width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #faf9f7;
     padding: 24px 24px 24px;
     box-shadow: -8px 0 30px rgba(0,0,0,0.25);
@@ -132,6 +129,9 @@ h1, h2, h3 {
 
     border-left: 1px solid #eee;
     font-family: "Inter", system-ui, sans-serif;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .price-grid {
@@ -157,7 +157,7 @@ h1, h2, h3 {
 }
 
 .price-drawer p {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 /*TRANSFER*/
@@ -198,6 +198,10 @@ h1, h2, h3 {
 .transfer-image-grid img:hover {
     transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.price_h3 {
+    color: red;
 }
 
 /*Tips*/

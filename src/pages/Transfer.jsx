@@ -15,7 +15,6 @@ function Transfer() {
                 alignItems: "center",
                 marginBottom: "30px",
                 marginTop: "30px",
-                marginBottom: "30px",
                 textDecoration: "none",
                 fontWeight: "600",
             }}>
