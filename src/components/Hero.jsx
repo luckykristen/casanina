@@ -1,6 +1,4 @@
 import './Hero.css';
-import { useEffect, useState } from 'react';
-
 
 function Hero() {
   return(
@@ -16,9 +14,14 @@ function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="#contact" className="btn-primary">
+          <button
+            className="btn-primary"
+            onClick={() => {
+              document.getElementById("contact")?.scrollIntoView({ behaviort: "smooth", block: "start", });
+            }}
+          >
             Zobrazit dostupnost
-          </a>
+          </button>
         </div>
       </div>
     </section>

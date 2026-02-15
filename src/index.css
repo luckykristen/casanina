@@ -18,12 +18,18 @@
     --space-inner: 24px;
 
     --header-hight: 100px;
+
+    --header-h: 80px;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+section[id] {
+    scroll-margin-top: calc(var(--header-h) + 12px);
 }
 
 html, body {
@@ -320,5 +326,9 @@ h1, h2, h3 {
 
     .transfer-image-grid img {
         height: 200px;
+    }
+
+    :root {
+        --header-h: 96px;
     }
 }

@@ -7,7 +7,7 @@ function CTA() {
     const sectionRef = useRef(null);
     useReveal(sectionRef);
     return (
-        <section className="section cta" id='contact' ref={sectionRef}>
+        <section className="section cta" id="contact" ref={sectionRef}>
             <h2>Chcete si rezervovat svůj termín?</h2>
             <p>Zkontrolujte volné termíny a ozvěte se pro více informací.</p>
             <Link to="/kalendar" className="btn-primary" target='_blank'>Volné termíny</Link>

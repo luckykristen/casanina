@@ -5,7 +5,15 @@ import imageLogo from "../assets/images/logo_casanina.jpg"
 
 function Header({ onOpenPrice}) {
     const [scrolled, setScrolled] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);    
+    const scrollTop = (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+    };
 
     useEffect(() => {
         const onScroll = () => {
@@ -37,7 +45,7 @@ function Header({ onOpenPrice}) {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className='header-inner'>
                 <div className='logo'>
-                    <a href="#top"><img src={imageLogo} alt="logo" /></a>
+                    <a href="#top" onClick={scrollTop}><img src={imageLogo} alt="logo" /></a>
                 </div>
 
                 <nav className={`nav ${isOpen ? "open" : ""}`}>
