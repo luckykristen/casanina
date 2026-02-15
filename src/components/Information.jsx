@@ -10,16 +10,16 @@ function Information() {
             <div className='section-inner'>
                 <h2>Infromace k pobytu</h2>
                 <p>
-                    • Ubytování je určeno pro 1-7 osob.
+                    • Ubytování je určeno pro 1-8 osob.
                     V prvním patře se nachází obývací pokoj s kuchyňským koutem, který je plně vybavený nádobím, elektrickou troubou,
                     plynovým sporákem a kávovarem. Dále je zde jídelní stůl, pohodlná rozkládací pohovka pro 2 osoby a TV.
                 </p>
                 <p>
-                    • V suterénu je ložnice s manželskou postelí a 1 jednolůžkovou postelí, pracovním koutem a vlastní koupelnou se sprchou, WC a bidetem.
+                    • V suterénu je ložnice s manželskou postelí a 2 jednolůžkovými postelemi, pracovním koutem a vlastní koupelnou se sprchou, WC a bidetem.
                 </p>
                 <p>
                     • V prvním patře je další ložnice pro 2 osoby s manželskou postelí, komodou, 
-                    terasou s výhledem na moře a vlastní koupelnou s WC a sprchovým koutem.
+                    balkónkem s výhledem na moře, vlastní koupelnou s WC a sprchovým koutem.
                 </p>
                 <p>
                     • K dispozici je pračka a sušička.
@@ -37,10 +37,10 @@ function Information() {
                     • Wi-Fi připojení je dostupné v celém objektu.
                 </p>
                 <p>
-                    • Parkování je možné na dvorku před domem nebo před vraty v ulici.
+                    • Parkování je možné na dvorku před domem nebo v ulici.
                 </p>
                 <p>
-                    • Check-in je možný od 14:00, check-out do 10:00.
+                    • Check-in je možný od 15:00, check-out do 10:00.
                 </p>
             </div>
         </section>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
 import CalendarPage from "./pages/CalendarPage"
 import './App.css'
 import './index.css'
@@ -21,42 +21,38 @@ function App() {
   const [isPriceOpen, setIsPriceOpen] = useState(false);
 
   return (
-    <>
-    { /*Casa Nina */}
-    
-    <BrowserRouter>
-    <Routes>
-      <Route 
-      path='/'
-      element={
-    <main>
-      <Header onOpenPrice={() => setIsPriceOpen(true)} />
-      <Hero /> 
+  <> 
+    <HashRouter>
+      <Routes>
+        <Route 
+          path='/'
+          element={
+            <main>
+              <Header onOpenPrice={() => setIsPriceOpen(true)} />
+              <Hero /> 
+              <Accommodation />
+              <Highlights />
+              <Gallery />
+              <Information />
+              <Location />
+              <CTA />
+              <Footer />
+            </main>
+          }
+        />
 
-      <Accommodation />
-      <Highlights />
-      <Gallery />
-      <Information />
-      
-      <Location />
-      <CTA />
+        <Route path="/kalendar" element={<CalendarPage />} />
+        <Route path="/price" element={<Price />} />
+        <Route path='/transfer' element={<Transfer />} />
+        <Route path='/tips' element={<Tips />} />
+      </Routes>
 
-      <Footer />
-    </main>
-    }
-    />
-      <Route path="/kalendar" element={<CalendarPage />} />
-      <Route path="/price" element={<Price />} />
-      <Route path='/transfer' element={<Transfer />} />
-      <Route path='/tips' element={<Tips />} />
-    </Routes>
-
-    {isPriceOpen && (
-      <Price onClose={() => setIsPriceOpen(false)} />
-    )}
-  </BrowserRouter>
-</>
+      {isPriceOpen && (
+        <Price onClose={() => setIsPriceOpen(false)} />
+      )}
+    </HashRouter>
+  </>
   );
 }
 
-export default App
+export default App;
