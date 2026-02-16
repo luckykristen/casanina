@@ -9,10 +9,10 @@ function Information() {
         <section className="section information alt" id='information' ref={sectionRef}>
             <div className='section-inner'>
                 <h2>Infromace k pobytu</h2>
+                <p>• Ubytování je určeno pro 1-8 osob.</p>
                 <p>
-                    • Ubytování je určeno pro 1-8 osob.
-                    V prvním patře se nachází obývací pokoj s kuchyňským koutem, který je plně vybavený nádobím, elektrickou troubou,
-                    plynovým sporákem a kávovarem. Dále je zde jídelní stůl, pohodlná rozkládací pohovka pro 2 osoby a TV.
+                    • V prvním patře se nachází obývací pokoj s kuchyňským koutem, který je plně vybavený nádobím, elektrickou troubou,
+                    plynovým sporákem a kávovarem. Dále je zde jídelní stůl, pohodlná rozkládací pohovka pro 2 osoby a TV. Taktéž je tu koupelna se sprchovým koutem, WC a bidetem.
                 </p>
                 <p>
                     • V suterénu je ložnice s manželskou postelí a 2 jednolůžkovými postelemi, pracovním koutem a vlastní koupelnou se sprchou, WC a bidetem.
@@ -28,7 +28,8 @@ function Information() {
                     • Domek je plně klimatizovaný.
                 </p>
                 <p>
-                    • Samozřejmostí jsou ručníky a vybavené koupelny veškerou hygienou. Fén a žehlička jsou také k dispozici.
+                    • Samozřejmostí jsou ručníky a vybavené koupelny veškerou hygienou. Fén a žehlička jsou také k dispozici. <br />
+                     <strong>Ručníky nejsou k použití na pláž!</strong>
                 </p>
                 <p>
                     • Ubytování je pet-friendly bez ohledu na velikosti či druhu domácího zvířete. Zvířecí kamarádi jsou v ceně ubytování.
