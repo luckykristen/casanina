@@ -32,7 +32,8 @@ import e12 from "../assets/images/mestoviaroma.jpeg"
 import e13 from "../assets/images/mestoviaroma2.jpeg"
 
 import "./Gallery.css";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
+import { Fragment } from "react";
 
 // importy fotek (přidej si další)
 /*import u1 from "../assets/images/pic_high1.jpg";
@@ -96,18 +97,25 @@ function Gallery() {
   // 2) Lightbox stav: která kategorie + která fotka
   const [open, setOpen] = useState(null); 
   // open = { catIndex: number, photoIndex: number } | null
+  const inlineRef = useRef(null);
+  const prevOpenRef = useRef(null); 
 
   const close = () => setOpen(null);
 
   // 3) Zamknout scroll stránky, když je otevřený lightbox
   useEffect(() => {
-    if (!open) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
+    const wasClosed = prevOpenRef.current == null;
+    const isOpenNow = open != null;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile && wasClosed && isOpenNow) {
+    requestAnimationFrame(() => {
+      inlineRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+    }
+    prevOpenRef.current = open;
   }, [open]);
+ 
 
   // 4) Klávesy: ESC zavře, šipky přepínají v rámci kategorie
   useEffect(() => {
@@ -139,75 +147,97 @@ function Gallery() {
     open ? categories[open.catIndex].photos[open.photoIndex] : null;
 
   return (
-    <section className="section gallery alt">
-      <h2 id="gallery">Galerie</h2>
+  <section className="section gallery alt">
+    <h2 id="gallery">Galerie</h2>
 
-      {categories.map((cat, catIndex) => (
-        <div className="gallery-block" key={cat.title}>
-          <h3>{cat.title}</h3>
+    {categories.map((cat, catIndex) => (
+      <div className="gallery-block" key={cat.title}>
+        <h3>{cat.title}</h3>
 
-          <div className="gallery-grid">
-            {cat.photos.map((p, photoIndex) => (
-              <button
-                key={p.src}
-                className="gallery-item"
-                onClick={() => setOpen({ catIndex, photoIndex })}
-                aria-label={`Otevřít fotku: ${p.alt}`}
+        <div className="gallery-grid">
+          {cat.photos.map((p, photoIndex) => {
+            const isOpen =
+              open?.catIndex === catIndex && open?.photoIndex === photoIndex;
+
+            return (
+              <Fragment key={p.src}>
+                <button
+                  className="gallery-item"
+                  onClick={() =>
+                    setOpen((prev) =>
+                      prev &&
+                      prev.catIndex === catIndex &&
+                      prev.photoIndex === photoIndex
+                        ? null // klik na stejnou -> zavřít
+                        : { catIndex, photoIndex }
+                    )
+                  }
+                  aria-label={`Otevřít fotku: ${p.alt}`}
+                  type="button"
                 >
-                <img src={p.src} alt={p.alt} loading="lazy" />
-              </button>
-            ))}
-          </div>
+                  <img src={p.src} alt={p.alt} loading="lazy" />
+                </button>
+
+                {isOpen && (
+                  <div ref={inlineRef} className="inline-preview">
+                    <button
+                      className="inline-close"
+                      onClick={close}
+                      aria-label="Zavřít"
+                      type="button"
+                    >
+                      ✕
+                    </button>
+
+                    <button
+                      className="inline-nav inline-prev"
+                      onClick={() =>
+                        setOpen((o) => {
+                          const len = categories[o.catIndex].photos.length;
+                          return {
+                            ...o,
+                            photoIndex: (o.photoIndex - 1 + len) % len,
+                          };
+                        })
+                      }
+                      aria-label="Předchozí"
+                      type="button"
+                    >
+                      ‹
+                    </button>
+
+                    <figure className="inline-figure">
+                      <img className="inline-img" src={p.src} alt={p.alt} />
+                      <figcaption className="inline-caption">
+                        {cat.title} • {photoIndex + 1}/{cat.photos.length}
+                      </figcaption>
+                    </figure>
+
+                    <button
+                      className="inline-nav inline-next"
+                      onClick={() =>
+                        setOpen((o) => {
+                          const len = categories[o.catIndex].photos.length;
+                          return {
+                            ...o,
+                            photoIndex: (o.photoIndex + 1) % len,
+                          };
+                        })
+                      }
+                      aria-label="Další"
+                      type="button"
+                    >
+                      ›
+                    </button>
+                  </div>
+                )}
+              </Fragment>
+            );
+          })}
         </div>
-      ))}
-
-      {open && (
-        <div className="lightbox" onClick={close} role="dialog" aria-modal="true">
-          <button className="lightbox-close" onClick={close} aria-label="Zavřít">
-            ✕
-          </button>
-
-          <button
-            className="lightbox-nav lightbox-prev"
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpen((o) => {
-                const len = categories[o.catIndex].photos.length;
-                return { ...o, photoIndex: (o.photoIndex - 1 + len) % len };
-              });
-            }}
-            aria-label="Předchozí"
-          >
-            ‹
-          </button>
-
-          <figure
-            className="lightbox-figure"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img className="lightbox-img" src={current.src} alt={current.alt} />
-            <figcaption className="lightbox-caption">
-              {categories[open.catIndex].title} • {open.photoIndex + 1}/
-              {categories[open.catIndex].photos.length}
-            </figcaption>
-          </figure>
-
-          <button
-            className="lightbox-nav lightbox-next"
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpen((o) => {
-                const len = categories[o.catIndex].photos.length;
-                return { ...o, photoIndex: (o.photoIndex + 1) % len };
-              });
-            }}
-            aria-label="Další"
-          >
-            ›
-          </button>
-        </div>
-      )}
-    </section>
+      </div>
+    ))}
+  </section>
   );
 }
 

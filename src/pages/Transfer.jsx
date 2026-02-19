@@ -31,11 +31,7 @@ function Transfer() {
                 <img src={imageFour} alt="car" />
             </div>
             <p>Transfer provádíme komfortním klimatizovaných autem pro 6 pasažérů.</p>
-
-            <div className="transfer-image-grid">
-                <img src={imageOne} alt="car" />
-            </div>
-            <p>Transfer nabízíme i pro Vaše mazlíčky thermo vozíkem pro psy.</p>
+            <p>🐶 Transfer nabízíme i pro Vaše mazlíčky thermo vozíkem pro psy.</p>
             <br />
             <p>🗺️ Pro skupinku max. 6 lidí je možné si objednat auto na výlety, kam Vás doveze náš řidič.</p>
             <p>Cena viz. ceník na hlavní stránce.</p>

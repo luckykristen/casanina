@@ -28,7 +28,7 @@ function Price({ onClose }) {
 
                 <h2>Ceník</h2>
                 <div className="price-grid">
-                    <h3>Pronájem celého domu (1 - 8 osob):</h3>
+                    <h3>Pronájem celého apartmánu (1 - 8 osob):</h3>
                     <p>🌴červenec a srpen: 180€/noc/dům</p>
                     <p>🌊červen a září: 130€/noc/dům</p>
                     <p>🌸květen a říjen: 90€/noc/dům</p>
@@ -75,7 +75,9 @@ function Price({ onClose }) {
 
                 <div>
                     <h3 className="price_h3">Pobytová taxa</h3>
-                    <p>Při příjezdu </p>
+                    <p>Při příjezdu je nutno zaplatit pobytovou taxu za každého ubytovaného hosta, kromě nezletilých do 14 let a senioři nad 70 let.</p>
+                    <p>Cena je <strong>1€ za osobu</strong> pro maximálně 5 po sobě jdoucích nocí v kalendářním roce ve stejném objektu. Tzn. jedna osoba při pobytu 5 a více dní ve stejném objektu platí pouze 5€.</p>
+                    <p>3 dny = 3€ za osobu, 7 a více dní = 5€ za osobu</p>
                 </div>
 
             </div>

@@ -3,6 +3,8 @@ import imageMajak from "../assets/images/majak.jpg"
 import imageCalalunga from "../assets/images/calalunga.jpg"
 import imageSottotorre from "../assets/images/pic_sea2.jpg"
 import citytower from "../assets/images/mestovez.jpeg"
+import carloforte from "../assets/images/carloforte.jpg"
+import portoflavia from "../assets/images/porto_flavia.jpeg"
 
 function Tips() {
     return(
@@ -28,16 +30,16 @@ function Tips() {
                 <div className="tips-list">
 
                     <div className="tip-card">
-                        <img src="" alt="Spiaggia delle Saline" />
+                        <img src={carloforte} alt="Spiaggia delle Saline" />
                             <div className="tips-content">
-                                <h3>Spiaggia delle Saline</h3>
-                                <p>Dlouhá a široká písečná pláž</p>
+                                <h3>Carloforte</h3>
+                                <p className="p_tips">Město na ostrově San Pietro</p>
                                 <ul>
-                                    <li>Dlouhá a široká písečná pláž pojmenovaná podle blízkých solných polí.</li>
-                                    <li>Pláž je lemovaná útesy a malým kamenným molem. Na levé straně při pohledu od moře je část poblíž solných polí.</li>
-                                    <li>Ideální pro rodiny s dětmi díky mělké vodě u břehu.</li>
-                                    <li>K vybavení patří bar s přátelskou obsluhou.</li>
-                                    <li>Pláž se nachází 1,5 km od ubytování. Kousek od pláže je parkoviště, které je v sezóně placené.</li>
+                                    <li>Středomořská atmosféra díky historickému centru s barevnými domy.</li>
+                                    <li>Úchvatné výhledy na moře.</li>
+                                    <li>Je proslulé svým spojením s lovem tuňáků, hlavně díky každoročnímu mezinárodnímu kulinářskému festivalu Girotonno.</li>
+                                    <li>Z Calasetty pluje skoro kazdou hodinu trajekt.</li>
+                                    <li>Doporučujeme ochutnat tuňáka v místních restauracích.</li>
                                 </ul>
                             </div>
                     </div>
@@ -46,7 +48,7 @@ function Tips() {
                         <img src={imageSottotorre} alt="Sotto Torre Beach" />
                             <div className="tips-content">
                                 <h3>Sotto Torre Pláž</h3>
-                                <p>Pláž ve měste Calasetta</p>
+                                <p className="p_tips">Pláž ve měste Calasetta</p>
                     
                                 <ul>
                                     <li>Sotto Torre je pláž v Calasettě, blízko centra města, která je vhodná pro rodiny s dětmi díky mělké vodě u břehu.</li>
@@ -63,7 +65,7 @@ function Tips() {
                         <img src={citytower} alt="Calasetta La Torre" />
                             <div className="tips-content">
                                 <h3>Calasetta La Torre</h3>
-                                <p>Historická věž ve měste Calasetta</p>
+                                <p className="p_tips">Historická věž ve měste Calasetta</p>
                                 <ul>
                                     <li>Calasetta La Torre je historická věž, která sloužila k obráně proti pirátům a je dnes symbolem města.</li>
                                     <li>Věž, postavená kolem roku 1750, je 20 metrů vysoká a nabízí panoramatický výhled na okolní oblast, 
@@ -78,7 +80,7 @@ function Tips() {
                         <img src={imageCalalunga} alt="Cala Lunga" />
                             <div className="tips-content">
                                 <h3>Spiaggia Cala Lunga</h3>
-                                <p>Úzká pláž Cala Lunga</p>
+                                <p className="p_tips">Úzká pláž Cala Lunga</p>
                                 <ul>
                                     <li>Pláž Cala Lunga je typická svou úzkou zátokou s písečnou pláží na jihozápadě Sardinie na ostrově Sant'Antioco.</li>
                                     <li>Je oblíbená pro svou klidnou atmosféru, průzračné moře a okolní skály.</li>
@@ -92,7 +94,7 @@ function Tips() {
                         <img src={imageMajak} alt="Faro Mangiabarche" />
                             <div className="tips-content">
                                 <h3>Faro Mangiabarche</h3>
-                                <p>Navigační maják kousek od města Calasetta</p>
+                                <p className="p_tips">Navigační maják kousek od města Calasetta</p>
                 
                                 <ul>
                                     <li>Název znamená doslova "Požírač lodí".</li>
@@ -102,6 +104,21 @@ function Tips() {
                                     <li>Západy Slunce zde mají mimořádnou atmosféru. V zimě a při silném mistrálu se okolí mění na fascinující ukázku síly přírody
                                      - vlny často sahají až k vrcholu majáku.</li>
                                     <li>Plavání u majáku není doporučeno - podvodní skály a proudy jsou zrádné. Maják je ale skvělé místo pro fotografy a dronaře.</li>
+                                </ul>
+                            </div>
+                    </div>
+
+                    <div className="tip-card">
+                        <img src={portoflavia} alt="Porto Flavia" />
+                            <div className="tips-content">
+                                <h3>Porto Flavia</h3>
+                                <p className="p_tips">Bývalý důlní přístav vytesaný do útesů</p>
+                
+                                <ul>
+                                    <li>Přístav vybudovaný v roce 1924. Sloužil k přímé nakládce olova a zinku z okolních dolů na lodě, což bylo na svoje dobu inženýrské mistrovské dílo.</li>
+                                    <li>Stavba nese jméno dcery svého navrháře - inženýra Cesare Vecelliho. </li>
+                                    <li>Komplex se skládá ze dvou pater tunelů, které ústí vysoko nad mořskou hladinou.</li>
+                                    <li>Památka UNESCO.</li>
                                 </ul>
                             </div>
                     </div>

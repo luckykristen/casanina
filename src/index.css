@@ -255,6 +255,10 @@ h1, h2, h3 {
     margin-bottom: 6px;
 }
 
+.p_tips {
+    font-style: italic;
+}
+
 
 @keyframes slideIn {
     from {
