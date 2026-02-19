@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import imageMajak from "../assets/images/majak.jpg"
 import imageCalalunga from "../assets/images/calalunga.jpg"
 import imageSottotorre from "../assets/images/pic_sea2.jpg"
+import citytower from "../assets/images/mestovez.jpeg"
 
 function Tips() {
     return(
@@ -59,7 +60,7 @@ function Tips() {
                     </div>
 
                     <div className="tip-card">
-                        <img src="" alt="Calasetta La Torre" />
+                        <img src={citytower} alt="Calasetta La Torre" />
                             <div className="tips-content">
                                 <h3>Calasetta La Torre</h3>
                                 <p>Historická věž ve měste Calasetta</p>

@@ -10,7 +10,7 @@ function Accommodation() {
             <div className='section-inner'>
                 <h2>O ubytování</h2>
                     <p>
-                        Casa Nina je útulné rekreační ubytování v jižní Sardinii,
+                        Casa Nina je útulné rekreační ubytování v jihozápadní Sardinii,
                         ideální pro páry i rodiny, které hledají klid,
                         přírodu a skutečný středomořský život.
                     </p>
@@ -18,7 +18,7 @@ function Accommodation() {
                         Ubytování se nachází v tiché lokalitě nedaleko moře a 
                         nabízí příjemné zázemí pro odpočinek i objevování krás ostrova.
                         Okolí vás nadchne autentickou sardinskou atmosférou
-                        a blízkostí pláží i tradičních městeček.
+                        a blízkostí pláží i panenskou přírodou.
                     </p>
                     <p>
                         Casa Nina je ideální volbou pro hosty, 
@@ -26,8 +26,8 @@ function Accommodation() {
                         rádi tráví čas venku a chtějí poznat Sardinii v jejím přirozeném tempu.
                     </p>
                     <p>
-                        Ráno zde můžete začít kávou na terase s výhledem na moře,
-                        den strávit u moře a večer zakončit v klidu s výbornou italskou kuchyní v místních restauracích.
+                        Ráno zde můžete začít kávou na balkónku s výhledem na moře,
+                        den strávit na pláži a večer zakončit v klidu s výbornou italskou kuchyní v místních restauracích.
                     </p>
 
                         <ul className="location-list">
@@ -35,9 +35,8 @@ function Accommodation() {
                             <li>Velikost ubytování: 88m2</li>
                             <li>Kapacita: maximum 8 osob</li>
                             <li>Dispozice: 2 samostatné ložnice každá se svou koupelnou a WC</li>
-                            <li>Obývací prostor s plně vybavenou kuchyňkou a rozkládacím gaučem</li>
-                            <li>Klimatizace ve všech pokojích</li>
-                            <li>Exteriér: soukromá terasa s horní ložnice, zahrada s grilem</li>
+                            <li>Obývací prostor s plně vybavenou kuchyňkou a rozkládacím gaučem pro 2 osoby</li>
+                            <li>Exteriér: balkónek s výhledem na moře, dvorek s grilem</li>
                         </ul>
             </div>
         </section>
