@@ -29,9 +29,9 @@ function Price({ onClose }) {
                 <h2>Ceník</h2>
                 <div className="price-grid">
                     <h3>Pronájem celého apartmánu (1 - 8 osob):</h3>
-                    <p>🌴červenec a srpen: 180€/noc/dům</p>
-                    <p>🌊červen a září: 130€/noc/dům</p>
-                    <p>🌸květen a říjen: 90€/noc/dům</p>
+                    <p>🌴červenec a srpen: 180€/noc/apartmán</p>
+                    <p>🌊červen a září: 130€/noc/apartmán</p>
+                    <p>🌸květen a říjen: 90€/noc/apartmán</p>
                 </div>
 
                 <div className="price-grid">

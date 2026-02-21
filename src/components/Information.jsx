@@ -25,9 +25,6 @@ function Information() {
                     • K dispozici je pračka a sušička.
                 </p>
                 <p>
-                    • Domek je plně klimatizovaný.
-                </p>
-                <p>
                     • Samozřejmostí jsou ručníky a vybavené koupelny veškerou hygienou. Fén a žehlička jsou také k dispozici. <br />
                      <strong>Ručníky nejsou k použití na pláž!</strong>
                 </p>
@@ -35,10 +32,10 @@ function Information() {
                     • Ubytování je pet-friendly bez ohledu na velikosti či druhu domácího zvířete. Zvířecí kamarádi jsou v ceně ubytování.
                 </p>
                 <p>
-                    • Wi-Fi připojení je dostupné v celém objektu.
+                    • Wi-Fi připojení je dostupné v celém apartmánu.
                 </p>
                 <p>
-                    • Parkování je možné na dvorku před domem nebo v ulici.
+                    • Parkování je možné na dvorku před apartmánem nebo v ulici.
                 </p>
                 <p>
                     • Check-in je možný od 15:00, check-out do 10:00.
