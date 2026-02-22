@@ -32,6 +32,8 @@ function Price({ onClose }) {
                     <p>🌴červenec a srpen: 180€/noc/apartmán</p>
                     <p>🌊červen a září: 130€/noc/apartmán</p>
                     <p>🌸květen a říjen: 90€/noc/apartmán</p>
+                    <br />
+                    <strong>Cena nezahrnuje konečný úklid apartmánu 50€.</strong>
                 </div>
 
                 <div className="price-grid">
