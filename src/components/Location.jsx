@@ -10,7 +10,7 @@ function Location() {
             <div className='section-inner'>
                 <h2>Lokalita</h2>
             <p>
-                Apartmán Casa Nina se nachází v klidné části jihovýchodní Sardínie, v malebném městečku Calasetta
+                Apartmán Casa Nina se nachází v klidné části jihozápadní Sardínie, v malebném městečku Calasetta
                 v blízkosti krásných pláží, 
                 pobřežních stezek a tradičních sardinských restaurací.
             </p>
