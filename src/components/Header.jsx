@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import imageLogo from "../assets/images/logo_casanina.jpg"
+import imageLogo from "../assets/images/logo_casanina.jpg";
+import { t } from '../i18n'
 
-function Header({ onOpenPrice}) {
+function Header({ lang, onLangChange, onOpenPrice}) {
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);    
     const scrollTop = (e) => {
@@ -49,16 +50,73 @@ function Header({ onOpenPrice}) {
                 </div>
 
                 <nav className={`nav ${isOpen ? "open" : ""}`}>
-                    <a href="#about" onClick={(e) => handleNav(e, "about")}>O ubytování</a>
-                    <a href="#gallery" onClick={(e) => handleNav(e, "gallery")}>Galerie</a>
-                    <a href="#information" onClick={(e) => handleNav(e, "information")}>Informace</a>
-                    <a href="#location" onClick={(e) => handleNav(e, "location")}>Lokalita</a>
+                    <a href="#about" onClick={(e) => handleNav(e, "about")}>
+                        {t(lang, 'nav_about')}
+                    </a>
 
-                    <Link to="/tips" onClick={(e) => setIsOpen(false)} target='_blank'>Tipy na výlet</Link>
-                    <Link to="/transfer" onClick={(e) => setIsOpen(false)} target='_blank'>Transfer & pronájem vozu</Link>
+                    <a href="#gallery" onClick={(e) => handleNav(e, "gallery")}>
+                        {t(lang, 'nav_gallery')}
+                    </a>
 
-                    <button className='price-btn' onClick={onOpenPrice}>Ceník</button>
+                    <a href="#information" onClick={(e) => handleNav(e, "information")}>
+                        {t(lang, 'nav_information')}
+                    </a>
+
+                    <a href="#location" onClick={(e) => handleNav(e, "location")}>
+                        {t(lang, 'nav_location')}
+                    </a>
+
+                    <Link
+                        to="/tips"
+                        onClick={() => setIsOpen(false)}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {t(lang, 'nav_tips')}
+                    </Link>
+
+                    <Link
+                        to="/transfer"
+                        onClick={() => setIsOpen(false)}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {t(lang, 'nav_transfer')}
+                    </Link>
+
+                    <button className='price-btn' onClick={onOpenPrice}>
+                        {t(lang, 'nav_prices')}
+                    </button>
                 </nav>
+
+                <div className="lang-switch">
+                    <button
+                        type="button"
+                        className={`lang-btn ${lang === 'cs' ? 'active' : ''}`}
+                        onClick={() => onLangChange('cs')}
+                        aria-label="Czech"
+                    >
+                        🇨🇿
+                    </button>
+
+                    <button
+                        type="button"
+                        className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
+                        onClick={() => onLangChange('en')}
+                        aria-label="English"
+                    >
+                        🇬🇧
+                    </button>
+
+                    <button
+                        type="button"
+                        className={`lang-btn ${lang === 'it' ? 'active' : ''}`}
+                        onClick={() => onLangChange('it')}
+                        aria-label="Italiano"
+                    >
+                        🇮🇹
+                    </button>
+                </div>
             </div>
         </header>
     );

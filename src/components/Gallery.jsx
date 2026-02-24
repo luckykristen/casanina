@@ -34,22 +34,14 @@ import e13 from "../assets/images/mestoviaroma2.jpeg"
 import "./Gallery.css";
 import { useEffect, useMemo, useState, useRef } from "react";
 import { Fragment } from "react";
+import { t } from "../i18n"
 
-// importy fotek (přidej si další)
-/*import u1 from "../assets/images/pic_high1.jpg";
-import u2 from "../assets/images/pic_high2.jpg";
-import u3 from "../assets/images/pic_high3.jpg";
-
-import e1 from "../assets/images/pic_sea1.jpg";
-import e2 from "../assets/images/pic_sea2.jpg";
-import e3 from "../assets/images/pic_sea3.jpg";*/
-
-function Gallery() {
-  // 1) Struktura po kategoriích
+function Gallery({ lang }) {
   const categories = useMemo(
     () => [
       {
-        title: "Ubytování",
+        key: "acc",
+        titleKey: "gallery_cat_accommodation",
         photos: [
           { src: u1, alt: "Ubytování – fotka 1" },
           { src: u2, alt: "Ubytování – fotka 2" },
@@ -72,7 +64,8 @@ function Gallery() {
         ],
       },
       {
-        title: "Město Calasetta a okolí",
+        key: "around",
+        titleKey: "gallery_cat_area",
         photos: [
           { src: e1, alt: "Exteriér – fotka 1" },
           { src: e2, alt: "Exteriér – fotka 2" },
@@ -89,20 +82,17 @@ function Gallery() {
           { src: e13, alt: "Exteriér – fotka 13" },
         ],
       },
-      // přidej další kategorie...
     ],
     []
   );
 
-  // 2) Lightbox stav: která kategorie + která fotka
+  // Lightbox stav: která kategorie + která fotka
   const [open, setOpen] = useState(null); 
-  // open = { catIndex: number, photoIndex: number } | null
   const inlineRef = useRef(null);
   const prevOpenRef = useRef(null); 
-
   const close = () => setOpen(null);
 
-  // 3) Zamknout scroll stránky, když je otevřený lightbox
+  // Zamknout scroll stránky, když je otevřený lightbox
   useEffect(() => {
     const wasClosed = prevOpenRef.current == null;
     const isOpenNow = open != null;
@@ -117,7 +107,6 @@ function Gallery() {
   }, [open]);
  
 
-  // 4) Klávesy: ESC zavře, šipky přepínají v rámci kategorie
   useEffect(() => {
     if (!open) return;
 
@@ -148,16 +137,18 @@ function Gallery() {
 
   return (
   <section className="section gallery alt">
-    <h2 id="gallery">Galerie</h2>
+    <h2 id="gallery">{t(lang, "gallery_title")}</h2>
 
     {categories.map((cat, catIndex) => (
       <div className="gallery-block" key={cat.title}>
-        <h3>{cat.title}</h3>
+        <h3>{t(lang, cat.titleKey)}</h3>
 
         <div className="gallery-grid">
           {cat.photos.map((p, photoIndex) => {
             const isOpen =
               open?.catIndex === catIndex && open?.photoIndex === photoIndex;
+
+              const catTitle = t(lang, cat.titleKey);
 
             return (
               <Fragment key={p.src}>
@@ -172,7 +163,7 @@ function Gallery() {
                         : { catIndex, photoIndex }
                     )
                   }
-                  aria-label={`Otevřít fotku: ${p.alt}`}
+                  aria-label={`${t(lang, "gallery_open_photo")}: ${catTitle} ${photoIndex + 1}`}
                   type="button"
                 >
                   <img src={p.src} alt={p.alt} loading="lazy" />
@@ -183,7 +174,7 @@ function Gallery() {
                     <button
                       className="inline-close"
                       onClick={close}
-                      aria-label="Zavřít"
+                      aria-label={t(lang, "gallery_close")}
                       type="button"
                     >
                       ✕
@@ -200,7 +191,7 @@ function Gallery() {
                           };
                         })
                       }
-                      aria-label="Předchozí"
+                      aria-label={t(lang, "gallery_prev")}
                       type="button"
                     >
                       ‹
@@ -224,7 +215,7 @@ function Gallery() {
                           };
                         })
                       }
-                      aria-label="Další"
+                      aria-label={t(lang, "gallery_next")}
                       type="button"
                     >
                       ›

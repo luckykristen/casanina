@@ -1,32 +1,25 @@
 import './Location.css';
 import { useRef } from "react";
 import { useReveal } from "../components/useReveal";
+import { t } from "../i18n"
 
-function Location() {
+function Location({ lang }) {
         const sectionRef = useRef(null);
         useReveal(sectionRef);
     return (
         <section className="section location alt" id='location' ref={sectionRef}>
             <div className='section-inner'>
-                <h2>Lokalita</h2>
-            <p>
-                Apartmán Casa Nina se nachází v klidné části jihozápadní Sardínie, v malebném městečku Calasetta
-                v blízkosti krásných pláží, 
-                pobřežních stezek a tradičních sardinských restaurací.
-            </p>
-            <p>
-                Calasetta se nachází na ostrově Sant'Antioco, který je doslova rájem pro cyklisty - klidné silnice, krásné výhledy na moře a trasy vhodné jak pro rekreační ježdění, tak pro náročnější výlety.
-            </p>
-            <p>
-                Ideální místo pro objevování ostrova, kde si zároveň užijete klid a soukromí.
-            </p>
+                <h2>{t(lang, "loc_title")}</h2>
+                <p>{t(lang, "loc_p1")}</p>
+                <p>{t(lang, "loc_p2")}</p>
+                <p>{t(lang, "loc_p3")}</p>
 
-            <ul className="location-list">
-                <li>🌊 Pláž: 5 minut chůze</li>
-                <li>🍝 Restaurace & kavárny: 5–10 minut chůze</li>
-                <li>🛒 Obchody: v docházkové vzdálenosti</li>
-                <li>🚗 Letiště Cagliari: cca 1 hodina</li>
-            </ul>
+                <ul className="location-list">
+                    <li>🌊 {t(lang, "loc_li_beach")}</li>
+                    <li>🍝 {t(lang, "loc_li_food")}</li>
+                    <li>🛒 {t(lang, "loc_li_shops")}</li>
+                    <li>🚗 {t(lang, "loc_li_airport")}</li>
+                </ul>
             </div>
         </section>
     );

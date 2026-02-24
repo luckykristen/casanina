@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { HashRouter, Routes, Route } from "react-router-dom"
 import CalendarPage from "./pages/CalendarPage"
 import './App.css'
@@ -17,8 +17,13 @@ import Transfer from './pages/Transfer.jsx'
 import Tips from './pages/Tips.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [isPriceOpen, setIsPriceOpen] = useState(false);
+  const [isPriceOpen, setIsPriceOpen] = useState(false)
+  const [lang, setLang] = useState(localStorage.getItem('lang') || 'cs')
+
+  useEffect(() => {
+    localStorage.setItem('lang', lang)
+    document.documentElement.lang = lang
+  }, [lang])
 
   return (
   <> 
@@ -28,27 +33,27 @@ function App() {
           path='/'
           element={
             <main>
-              <Header onOpenPrice={() => setIsPriceOpen(true)} />
-              <Hero /> 
-              <Accommodation />
-              <Highlights />
-              <Gallery />
-              <Information />
-              <Location />
-              <CTA />
-              <Footer />
+              <Header lang={lang} onLangChange={setLang} onOpenPrice={() => setIsPriceOpen(true)} />
+              <Hero lang={lang} /> 
+              <Accommodation lang={lang} />
+              <Highlights lang={lang} />
+              <Gallery lang={lang} />
+              <Information lang={lang} />
+              <Location lang={lang} />
+              <CTA lang={lang} />
+              <Footer lang={lang} />
             </main>
           }
         />
 
-        <Route path="/kalendar" element={<CalendarPage />} />
-        <Route path="/price" element={<Price />} />
-        <Route path='/transfer' element={<Transfer />} />
-        <Route path='/tips' element={<Tips />} />
+        <Route path="/kalendar" element={<CalendarPage lang={lang} />} />
+        <Route path="/price" element={<Price lang={lang} />} />
+        <Route path='/transfer' element={<Transfer lang={lang} />} />
+        <Route path='/tips' element={<Tips lang={lang} />} />
       </Routes>
 
       {isPriceOpen && (
-        <Price onClose={() => setIsPriceOpen(false)} />
+        <Price lang={lang} onClose={() => setIsPriceOpen(false)} />
       )}
     </HashRouter>
   </>

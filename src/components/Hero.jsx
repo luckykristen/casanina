@@ -1,26 +1,35 @@
-import './Hero.css';
+import './Hero.css'
+import { t } from '../i18n'
 
-function Hero() {
-  return(
+function Hero({ lang }) {
+  return (
     <section className="hero hero-image">
-
       <div className="hero-overlay"></div>
 
       <div className="hero-text">
-        <span className="hero-eyebrow">Sardinie · Moře · Klid</span>
-        <h1>Váš domov na Sardinii</h1>
+        <span className="hero-eyebrow">
+          {t(lang, 'hero_tags')}
+        </span>
+
+        <h1>
+          {t(lang, 'hero_title')}
+        </h1>
+
         <p>
-          Útulné ubytování v blízkosti moře pro skutečný odpočinek.
+          {t(lang, 'hero_subtitle')}
         </p>
 
         <div className="hero-actions">
           <button
             className="btn-primary"
             onClick={() => {
-              document.getElementById("contact")?.scrollIntoView({ behaviort: "smooth", block: "start", });
+              document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              })
             }}
           >
-            Zobrazit dostupnost
+            {t(lang, 'hero_cta')}
           </button>
         </div>
       </div>
@@ -28,4 +37,4 @@ function Hero() {
   )
 }
 
-export default Hero;
+export default Hero

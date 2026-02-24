@@ -1,42 +1,28 @@
 import './Accommodation.css'
 import { useRef } from "react";
 import { useReveal } from "../components/useReveal";
+import { t } from "../i18n"
 
-function Accommodation() {
+function Accommodation({ lang }) {
     const sectionRef = useRef(null);
     useReveal(sectionRef);
+
     return (
         <section className="section accommodation" id='about' ref={sectionRef}>
             <div className='section-inner'>
-                <h2>O ubytování</h2>
-                    <p>
-                        Casa Nina je útulné rekreační ubytování v jihozápadní Sardinii,
-                        ideální pro páry i rodiny, které hledají klid,
-                        přírodu a skutečný středomořský život.
-                    </p>
-                    <p>
-                        Ubytování se nachází v tiché lokalitě nedaleko moře a 
-                        nabízí příjemné zázemí pro odpočinek i objevování krás ostrova.
-                        Okolí vás nadchne autentickou sardinskou atmosférou
-                        a blízkostí pláží i panenskou přírodou.
-                    </p>
-                    <p>
-                        Casa Nina je ideální volbou pro hosty, 
-                        kteří hledají klidné ubytování u moře,
-                        rádi tráví čas venku a chtějí poznat Sardinii v jejím přirozeném tempu.
-                    </p>
-                    <p>
-                        Ráno zde můžete začít kávou na balkónku s výhledem na moře,
-                        den strávit na pláži a večer zakončit v klidu s výbornou italskou kuchyní v místních restauracích.
-                    </p>
+                <h2>{t(lang, "acc_title")}</h2>
+                    <p>{t(lang, "acc_p1")}</p>
+                    <p>{t(lang, "acc_p2")}</p>
+                    <p>{t(lang, "acc_p3")}</p>
+                    <p>{t(lang, "acc_p4")}</p>
 
                         <ul className="location-list">
-                            <h3>Základní informace</h3>
-                            <li>Velikost ubytování: 88m2</li>
-                            <li>Kapacita: maximum 8 osob</li>
-                            <li>Dispozice: 2 samostatné ložnice každá se svou koupelnou a WC</li>
-                            <li>Obývací prostor s plně vybavenou kuchyňkou a rozkládacím gaučem pro 2 osoby</li>
-                            <li>Exteriér: balkónek s výhledem na moře, dvorek s grilem</li>
+                            <h3>{t(lang, "acc_info_title")}</h3>
+                            <li>{t(lang, "acc_info_size")}</li>
+                            <li>{t(lang, "acc_info_capacity")}</li>
+                            <li>{t(lang, "acc_info_layout")}</li>
+                            <li>{t(lang, "acc_info_living")}</li>
+                            <li>{t(lang, "acc_info_exterior")}</li>
                         </ul>
             </div>
         </section>
