@@ -77,7 +77,6 @@ function Price({ lang, onClose }) {
                     <h3 className="price_h3">{t(lang, "price_tax_title")}</h3>
                     <p>{t(lang, "price_tax_1")}</p>
                     <p>{t(lang, "price_tax_2")}</p>
-                    <p>{t(lang, "price_tax_3")}</p>
                 </div>
 
             </div>

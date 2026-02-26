@@ -108,6 +108,5 @@
 
     "price_tax_title": "Tourist tax",
     "price_tax_1": "Upon arrival, a tourist tax must be paid for each guest, except children under 14 and seniors over 70.",
-    "price_tax_2": "The fee is €1 per person for a maximum of 5 consecutive nights.",
-    "price_tax_3": "3 nights = €3 per person, 7 or more nights = €5 per person"
+    "price_tax_2": "The fee is €1 per person per night."
 }
