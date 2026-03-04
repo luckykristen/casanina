@@ -139,7 +139,7 @@ function CalendarPage() {
                             }}
                             />
                     </label>
-                <textarea name="message" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} id="texterea" placeholder="Zpráva" rows="5" required></textarea>
+                <textarea name="message" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} id="texterea" placeholder="* Zpráva" rows="5" required></textarea>
 
                 <div style={{ marginTop: "10px" }}>
                     <p><strong>* Máte zájem o transfer?</strong></p>
@@ -191,6 +191,44 @@ function CalendarPage() {
                             value="Ne - nemám zájem o půjčení auta."
                         />
                          Ne
+                    </label>
+
+                    <p><strong>* Termín půjčení auta:</strong></p>
+
+                    <label>
+                        Od:
+                        <input 
+                        type="date"
+                        name="dateFromCar"
+                        min={today}
+                        required
+                        style={{
+                            borderRadius: "4px",
+                            padding: "5px",
+                            fontFamily: "Poppins, sans-serif",
+                            marginLeft: "7px"
+                        }} 
+                        />
+                    </label>
+
+                    <br />
+
+                    <label>
+                        Do:
+                        <input 
+                        type="date"
+                        name="dateToCar"
+                        min={today}
+                        required
+                        style={{
+                            borderRadius: "4px",
+                            padding: "5px",
+                            fontFamily: "Poppins, sans-serif",
+                            marginLeft: "7px",
+                            marginTop: "10px",
+                            marginBottom: "10px"
+                        }} 
+                        />
                     </label>
 
                     <br />
