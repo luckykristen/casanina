@@ -193,7 +193,7 @@ function CalendarPage() {
                          Ne
                     </label>
 
-                    <p><strong>* Termín půjčení auta:</strong></p>
+                    <p><strong>Termín půjčení auta:</strong></p>
 
                     <label>
                         Od:
@@ -201,7 +201,6 @@ function CalendarPage() {
                         type="date"
                         name="dateFromCar"
                         min={today}
-                        required
                         style={{
                             borderRadius: "4px",
                             padding: "5px",
@@ -219,7 +218,6 @@ function CalendarPage() {
                         type="date"
                         name="dateToCar"
                         min={today}
-                        required
                         style={{
                             borderRadius: "4px",
                             padding: "5px",
