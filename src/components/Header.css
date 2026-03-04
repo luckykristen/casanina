@@ -110,7 +110,8 @@ nav a:hover {
 
 .price-btn {
     border: none;
-    background: #d4b24ca9;
+    background: #ffc106a9;
+    padding: 5px;
     color: #1c1c1c;
     font-size: 1.2rem;
     box-shadow: 10 6px 20px rgba(0,0,0,0.08);
@@ -153,6 +154,7 @@ nav a:hover {
 
     .price-btn {
         font-size: 10px;
+        padding: 2px;
     }
 
     .header.scrolled .nav a {
