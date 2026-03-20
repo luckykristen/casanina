@@ -108,5 +108,28 @@
 
     "price_tax_title": "Tassa di soggiorno",
     "price_tax_1": "All’arrivo è necessario pagare la tassa di soggiorno per ogni ospite, eccetto i minori di 14 anni e gli over 70.",
-    "price_tax_2": "La tassa è di 1 € a persona per notte."
+    "price_tax_2": "La tassa è di 1 € a persona per notte.",
+
+  "back_button": "← Torna alla homepage",
+  "available": "Calendario disponibilità",
+  "available_p": "Controlla la disponibilità e contattaci.",
+  "form_h2": "Richiesta non vincolante",
+  "form_p": "* Date del soggiorno",
+  "form_label_from": "Da:",
+  "form_label_till": "A:",
+  "form_name": "* Nome e cognome",
+  "form_email": "* Email",
+  "form_tel": "Telefono",
+  "form_number_guests": "* Numero di ospiti:",
+  "form_number_pets": "* Numero di animali domestici:",
+  "form_number": "Numero",
+  "form_message": "* Messaggio",
+  "form_transfer": "* Sei interessato al transfer?",
+  "form_yes": "Sí",
+  "form_no": "No",
+  "form_rentalcar": "* Sei interessato al noleggio auto?",
+  "form_date_rental": "In quale periodo desideri noleggiare l’auto?",
+  "form_required": "I campi contrassegnati con * sono obbligatori.",
+  "form_send_button": "Invia richiesta",
+  "form_confirm": "Inviando il modulo, confermo di aver letto e accettato il listino prezzi e le condizioni di soggiorno."
 }

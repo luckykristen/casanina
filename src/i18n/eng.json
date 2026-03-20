@@ -108,5 +108,28 @@
 
     "price_tax_title": "Tourist tax",
     "price_tax_1": "Upon arrival, a tourist tax must be paid for each guest, except children under 14 and seniors over 70.",
-    "price_tax_2": "The fee is €1 per person per night."
+    "price_tax_2": "The fee is €1 per person per night.",
+
+  "back_button": "← Back to homepage",
+  "available": "Availability  Calendar",
+  "available_p": "Check availability and contact us.",
+  "form_h2": "Non-binding inquiry",
+  "form_p": "* Stay dates",
+  "form_label_from": "From:",
+  "form_label_till": "To:",
+  "form_name": "* Full name",
+  "form_email": "* Email",
+  "form_tel": "Phone number",
+  "form_number_guests": "* Number of guests:",
+  "form_number_pets": "* Number of pets:",
+  "form_number": "Number",
+  "form_message": "* Message",
+  "form_transfer": "* Are you interested in a transfer?",
+  "form_yes": "Yes",
+  "form_no": "No",
+  "form_rentalcar": "* Are you interested in renting a car?",
+  "form_date_rental": "When you would like to rent a car?",
+  "form_required": "Fields marked with * are required.",
+  "form_send_button": "Send inquiry",
+  "form_confirm": "By submitting the form, I confirm that I have read and agree to the pricing and accommodation terms."
 }

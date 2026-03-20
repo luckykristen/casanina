@@ -1,60 +1,169 @@
 .calendar-wrapper {
-    margin: 40px 0;
-    padding: 24px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin: 40px 0;
+  padding: 28px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fffdf9 0%, #fff8ef 100%);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(190, 160, 120, 0.15);
 }
 
-/*celý kalendář*/
+/* celý kalendář */
 .react-calendar {
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    font-family: inherit;
-    border: none;
-    padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 22px;
+  background: white;
+  font-family: inherit;
+  padding: 18px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
-/*měsíc v kalendáři*/
+/* horní navigace */
+.react-calendar__navigation {
+  margin-bottom: 18px;
+}
+
 .react-calendar__navigation button {
-    font-weight: 600;
-    font-size: 16px;
+  min-width: 44px;
+  background: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: #3d342b;
+  border-radius: 12px;
+  transition: all 0.2s ease;
 }
 
-/*běžné dny*/
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background: #f6efe6;
+  color: #8c5a2b;
+}
+
+/* názvy dnů v týdnu */
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8a7a67;
+  margin-bottom: 8px;
+}
+
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+}
+
+/* běžné dny */
 .react-calendar__tile {
-    border-radius: 12px;
-    padding: 12px 6px;
-    transition: all 0.2s ease;
+  position: relative;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 8px;
+  background: transparent;
+  color: #2f2a26;
+  font-weight: 500;
+  transition: all 0.22s ease;
 }
 
-/*hover jako Airbnb*/
+/* hover */
 .react-calendar__tile:enabled:hover {
-    background: #f2f2f2;
+  background: #f8efe4;
+  color: #7f4f24;
+  transform: translateY(-1px);
 }
 
-/*vybraný datum*/
+/* focus */
+.react-calendar__tile:enabled:focus {
+  background: #f8efe4;
+  color: #7f4f24;
+}
+
+/* vybraný datum */
 .react-calendar__tile--active {
-    background: rgb(179, 179, 60);
-    color: black;
-    border-radius: 12px;
+  background: linear-gradient(135deg, #a3875e 0%, #d0af84 100%) !important;
+  color: white !important;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(201, 139, 60, 0.28);
 }
 
-/*dnešní den*/
+/* dnešní den */
 .react-calendar__tile--now {
-    background: #e6e6e6;
-    font-weight: 600;
+  background: #fff3db;
+  color: #8c5a2b;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px rgba(201, 139, 60, 0.2);
 }
 
-/*obsazené dny*/
-.booked-day {
-    background: rgba(255, 0, 0, 0.786);
-    color: #b0b0b0;
-    text-decoration: line-through;
-    cursor: not-allowed;
+/* dny z jiného měsíce */
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #c8beb3;
 }
 
+/* obecně zablokované dny */
+.react-calendar__tile:disabled {
+  background: #f7f4ef;
+  color: #b7ada2;
+  cursor: not-allowed;
+}
+
+/* plně obsazený den */
+.booked-full {
+  background: linear-gradient(135deg, #996e32 0%, #f0b162 100%) !important;
+  color: white !important;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+/* den odjezdu - levá půlka obsazená */
+.booked-checkout {
+  background: linear-gradient(
+    to right,
+    #996e32 0%,
+    #f0b162 50%,
+    #fffaf3 50%,
+    #fffaf3 100%
+  ) !important;
+  color: #2f2a26 !important;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(228, 125, 125, 0.15);
+}
+
+/* den příjezdu - pravá půlka obsazená */
+.booked-checkin {
+  background: linear-gradient(
+    to right,
+    #fffaf3 0%,
+    #fffaf3 50%,
+    #f0b162 50%,
+    #996e32 100%
+  ) !important;
+  color: #2f2a26 !important;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(228, 125, 125, 0.15);
+}
+
+/* den, kdy někdo odjíždí a jiný přijíždí */
+.booked-turnover {
+  background: linear-gradient(
+    to right,
+    #e89191 0%,
+    #d96d6d 50%,
+    #efb0b0 50%,
+    #e89191 100%
+  ) !important;
+  color: white !important;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+/* text pod kalendářem */
 .selected-date {
-    margin-top: 15px;
-    font-size: 0.95rem;
+  margin-top: 18px;
+  font-size: 1rem;
+  color: #5f5348;
+  font-weight: 500;
+}
+
+.selected-date strong {
+  color: #8c7f2b;
 }

@@ -108,5 +108,29 @@
 
   "price_tax_title": "Pobytová taxa",
   "price_tax_1": "Při příjezdu je nutné zaplatit pobytovou taxu za každého hosta kromě dětí do 14 let a seniorů nad 70 let.",
-  "price_tax_2": "Cena je 1 € za osobu na den."
+  "price_tax_2": "Cena je 1 € za osobu na den.",
+
+  "back_button": "← Zpět na hlavní stránku",
+  "available": "Kalendář obsazenosti",
+  "available_p": "Zkontrolujte dostupnost a napište nám.",
+  "form_h2": "Nezávazná poptávka",
+  "form_p": "* Termín pobytu",
+  "form_label_from": "Od:",
+  "form_label_till": "Do:",
+  "form_name": "* Jméno a příjmení",
+  "form_email": "* Email",
+  "form_tel": "Telefon",
+  "form_number_guests": "* Počet ubytovaných osob:",
+  "form_number_pets": "* Počet domácích mazlíčků:",
+  "form_number": "Počet",
+  "form_message": "* Zpráva",
+  "form_transfer": "* Máte zájem o transfer?",
+  "form_yes": "Ano",
+  "form_no": "Ne",
+  "form_rentalcar": "* Máte zájem o půjčení auta?",
+  "form_date_rental": "V jakém termínu si přejete půjčit auto?",
+  "form_required": "Pole označené * je povinné.",
+  "form_send_button": "Odeslat poptávku",
+  "form_confirm": "Odesláním formuláře potvrzuji, že jsem se obeznámil/a s ceníkem a podmínky pro ubytování."
+
 }

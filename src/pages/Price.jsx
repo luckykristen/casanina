@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import { t } from "../i18n"
 
 function Price({ lang, onClose }) {

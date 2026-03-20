@@ -4,8 +4,9 @@ import { useReveal } from "../components/useReveal";
 import { t } from "../i18n"
 
 function Information({ lang }) {
-        const sectionRef = useRef(null);
-        useReveal(sectionRef);
+    const sectionRef = useRef(null);
+    useReveal(sectionRef);
+
     return (
         <section className="section information alt" id='information' ref={sectionRef}>
             <div className='section-inner'>

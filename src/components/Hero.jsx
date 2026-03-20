@@ -2,6 +2,7 @@ import './Hero.css'
 import { t } from '../i18n'
 
 function Hero({ lang }) {
+  
   return (
     <section className="hero hero-image">
       <div className="hero-overlay"></div>

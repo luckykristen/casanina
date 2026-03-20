@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom"
 import BookingCalendar from "../components/BookingCalendar.jsx"
 import Button from "../components/Button.jsx"
-import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import { t } from '../i18n'
+import { useRef, useState } from "react";
 
 
-function CalendarPage() {
 
-        const today = new Date().toISOString().split("T")[0];
+function CalendarPage({ lang, onLangChange }) {
 
-       const formRef = useRef();
+    const [dateRange, setDateRange] = useState([null, null]);
+    const formRef = useRef();
 
         const sendEmail = (e) => {
             e.preventDefault();
@@ -30,7 +31,21 @@ function CalendarPage() {
             }
         );
         };
+
+        const formatDateForInput = (date) => {
+        if (!date) return "";
+  
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+
+        return `${year}-${month}-${day}`;
+    };
+
+        const today = formatDateForInput(new Date());
+
     return (
+
         <main style={{ padding: "60px 20px", maxWidth: "900px", margin: "0 auto" }}>
 
             <Link
@@ -41,13 +56,45 @@ function CalendarPage() {
                 textDecoration: "none",
                 fontWeight: "600",
             }}>
-                ← Zpět na hlavní stránku
+                {t(lang, "back_button")}
             </Link>
             
-            <h1 style={{ marginTop: "30px" }}>Kalendář obsazenosti</h1>
-            <p>Zkontrolujte dostupnost a napište nám.</p>
+            <h1 style={{ marginTop: "30px" }}>{t(lang, "available")}</h1>
+            <p>{t(lang, "available_p")}</p>
 
-            <BookingCalendar />
+                <div className="lang-switch">
+                    <button
+                        type="button"
+                        className={`lang-btn ${lang === 'cs' ? 'active' : ''}`}
+                        onClick={() => onLangChange('cs')}
+                        aria-label="Czech"
+                    >
+                        🇨🇿
+                    </button>
+
+                    <button
+                        type="button"
+                        className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
+                        onClick={() => onLangChange('en')}
+                        aria-label="English"
+                    >
+                        🇬🇧
+                    </button>
+
+                    <button
+                        type="button"
+                        className={`lang-btn ${lang === 'it' ? 'active' : ''}`}
+                        onClick={() => onLangChange('it')}
+                        aria-label="Italiano"
+                    >
+                        🇮🇹
+                    </button>
+                </div>
+
+            <BookingCalendar 
+            dateRange={dateRange}
+            setDateRange={setDateRange} 
+            />
 
             <form 
             ref={formRef}
@@ -59,23 +106,26 @@ function CalendarPage() {
                 gap: "15px",
             }}
             >
-                <h2>Nezávazná poptávka</h2>
+                <h2>{t(lang, "form_h2")}</h2>
 
                 <div>
-                    <p><strong>* Termín pobytu</strong></p>
+                    <p><strong>{t(lang, "form_p")}</strong></p>
 
                     <label>
-                        Od:
+                        {t(lang, "form_label_from")}
                         <input 
                         type="date"
                         name="dateFrom"
+                        value={formatDateForInput(dateRange[0])}
+                        readOnly
                         min={today}
                         required
                         style={{
                             borderRadius: "4px",
                             padding: "5px",
                             fontFamily: "Poppins, sans-serif",
-                            marginLeft: "7px"
+                            marginLeft: "7px",
+                            marginTop: "15px"
                         }} 
                         />
                     </label>
@@ -83,10 +133,12 @@ function CalendarPage() {
                     <br />
 
                     <label>
-                        Do:
+                        {t(lang, "form_label_till")}
                         <input 
                         type="date"
                         name="dateTo"
+                        value={formatDateForInput(dateRange[1])}
+                        readOnly
                         min={today}
                         required
                         style={{
@@ -101,17 +153,17 @@ function CalendarPage() {
                     </label>
                 </div>
                 
-                <input type="text" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} name="name" placeholder="*Jméno a příjmení" required />
-                <input type="email" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} name="email" placeholder="*Email" required />
-                <input type="tel" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} name="phone" placeholder="Telefon" />
+                <input type="text" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} name="name" placeholder={t(lang, "form_name")} required />
+                <input type="email" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} name="email" placeholder={t(lang, "form_email")} required />
+                <input type="tel" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} name="phone" placeholder={t(lang, "form_tel")} />
                 <label>
-                        * Počet ubytovaných osob:
+                        {t(lang, "form_number_guests")}
                         <input 
                             type="number"
                             name="guests"
                             min="1"
                             max="6"
-                            placeholder="Počet osob"
+                            placeholder={t(lang, "form_number")}
                             required
                             style={{
                                 borderRadius: "4px",
@@ -123,13 +175,13 @@ function CalendarPage() {
                     </label>
 
                     <label>
-                        * Počet domácích mazlíčků:
+                        {t(lang, "form_number_pets")}
                         <input 
                             type="number"
                             name="pets"
                             min="0"
                             max="6"
-                            placeholder="Počet zvířat"
+                            placeholder={t(lang, "form_number")}
                             required
                             style={{
                                 borderRadius: "4px",
@@ -139,19 +191,21 @@ function CalendarPage() {
                             }}
                             />
                     </label>
-                <textarea name="message" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} id="texterea" placeholder="* Zpráva" rows="5" required></textarea>
+
+                <textarea name="message" style={{borderRadius: "4px", padding: "5px", fontFamily: "Poppins, sans-serif"}} id="texterea" placeholder={t(lang, "form_message")} rows="5" required></textarea>
 
                 <div style={{ marginTop: "10px" }}>
-                    <p><strong>* Máte zájem o transfer?</strong></p>
+                    <p><strong>{t(lang, "form_transfer")}</strong></p>
 
                     <label>
                         <input 
                             type="radio"
                             name="transfer"
+                            style={{ marginRight: "5px"}}
                             value="Ano - mám zájem o transfer."
                             required
                         />
-                         Ano
+                        {t(lang, "form_yes")}
                     </label>
 
                     <br />
@@ -160,9 +214,10 @@ function CalendarPage() {
                         <input 
                             type="radio"
                             name="transfer"
+                            style={{ marginRight: "5px"}}
                             value="Ne - nemám zájem o transfer."
                         />
-                         Ne
+                        {t(lang, "form_no")}
                     </label>
 
                     <br />
@@ -170,16 +225,17 @@ function CalendarPage() {
                 </div>
 
                 <div style={{ marginTop: "10px" }}>
-                    <p><strong>* Máte zájem o půjčení auta?</strong></p>
+                    <p><strong>{t(lang, "form_rentalcar")}</strong></p>
 
                     <label>
                         <input 
                             type="radio"
                             name="car"
+                            style={{ marginRight: "5px"}}
                             value="Ano - mám zájem o půjčení auta."
                             required
                         />
-                         Ano
+                        {t(lang, "form_yes")}
                     </label>
 
                     <br />
@@ -189,14 +245,18 @@ function CalendarPage() {
                             type="radio"
                             name="car"
                             value="Ne - nemám zájem o půjčení auta."
+                            style={{
+                                marginBottom: "20px",
+                                marginRight: "5px"
+                            }}
                         />
-                         Ne
+                        {t(lang, "form_no")}
                     </label>
 
-                    <p><strong>Termín půjčení auta:</strong></p>
+                    <p><strong>{t(lang, "form_date_rental")}</strong></p>
 
                     <label>
-                        Od:
+                        {t(lang, "form_label_from")}
                         <input 
                         type="date"
                         name="dateFromCar"
@@ -205,7 +265,8 @@ function CalendarPage() {
                             borderRadius: "4px",
                             padding: "5px",
                             fontFamily: "Poppins, sans-serif",
-                            marginLeft: "7px"
+                            marginLeft: "7px",
+                            marginTop: "7px"
                         }} 
                         />
                     </label>
@@ -213,7 +274,7 @@ function CalendarPage() {
                     <br />
 
                     <label>
-                        Do:
+                        {t(lang, "form_label_till")}
                         <input 
                         type="date"
                         name="dateToCar"
@@ -233,12 +294,15 @@ function CalendarPage() {
 
                 </div>
 
-                <p>Pole označené * je povinné.</p>
+                <p>{t(lang, "form_required")}</p>
 
-                <Button>Odeslat poptávku</Button>
+                <label><strong>{t(lang, "form_confirm")}</strong></label>
+
+                <Button>{t(lang, "form_send_button")}</Button>
             </form>
         </main>
     );
+
 } 
 
 

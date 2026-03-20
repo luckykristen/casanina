@@ -46,7 +46,7 @@ function App() {
           }
         />
 
-        <Route path="/kalendar" element={<CalendarPage lang={lang} />} />
+        <Route path="/kalendar" element={<CalendarPage lang={lang} onLangChange={setLang} />} />
         <Route path="/price" element={<Price lang={lang} />} />
         <Route path='/transfer' element={<Transfer lang={lang} />} />
         <Route path='/tips' element={<Tips lang={lang} />} />
