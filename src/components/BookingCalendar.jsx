@@ -13,6 +13,9 @@ function BookingCalendar({ dateRange, setDateRange }) {
         checkOutDays: [],
     });
 
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
     useEffect(() => {
         const fetchOccupied = async () => {
             const query = `*[_type == "booking"]{
@@ -55,14 +58,19 @@ function BookingCalendar({ dateRange, setDateRange }) {
     
 
     const sameDay = (d1, d2) => d1.toDateString() === d2.toDateString();
+
     const isFullBooked = (day) =>
         bookingInfo.fullDays.some((d) => sameDay(d, day));
+
     const isCheckIn = (day) =>
         bookingInfo.checkInDays.some((d) => sameDay(d, day));
+
     const isCheckOut = (day) =>
         bookingInfo.checkOutDays.some((d) => sameDay(d, day));
+
     const getTileClassName = ({ date, view }) => {
         if (view !== "month") return null;
+        if (date < today) return "past-day";
 
         const full = isFullBooked(date);
         const checkIn = isCheckIn(date);
@@ -83,7 +91,7 @@ function BookingCalendar({ dateRange, setDateRange }) {
         onChange={setDateRange}
         value={dateRange}
         selectRange={true}
-        minDate={new Date()}
+        minDate={today}
         locale="cs-CZ"
         tileClassName={getTileClassName}
         tileDisabled={({ date, view }) =>
@@ -103,8 +111,16 @@ function BookingCalendar({ dateRange, setDateRange }) {
             : "—"}
         </strong>
       </p>
+
+      <button
+  type="button"
+  onClick={() => setDateRange([null, null])}
+>
+  Zrušit výběr
+</button>
     </div>
   );
+
 };
 
 export default BookingCalendar;

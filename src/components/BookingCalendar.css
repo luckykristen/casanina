@@ -41,7 +41,7 @@
 }
 
 /* názvy dnů v týdnu */
-.react-calendar__month-view__weekdays {
+.react-calendar__month-view_weekdays {
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 700;
@@ -49,7 +49,7 @@
   margin-bottom: 8px;
 }
 
-.react-calendar__month-view__weekdays abbr {
+.react-calendar__month-view_weekdays abbr {
   text-decoration: none;
 }
 
@@ -94,17 +94,25 @@
   box-shadow: inset 0 0 0 1px rgba(201, 139, 60, 0.2);
 }
 
+.react-calendar__tile:disabled {
+  background: #f0f0f0;
+  color: #a0a0a0;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
 /* dny z jiného měsíce */
-.react-calendar__month-view__days__day--neighboringMonth {
+.react-calendar__month-view_days_day--neighboringMonth {
   color: #c8beb3;
 }
 
-/* obecně zablokované dny */
-.react-calendar__tile:disabled {
-  background: #f7f4ef;
-  color: #b7ada2;
-  cursor: not-allowed;
+.past-day {
+  background: #f0f0f0;
+  color: #a0a0a0;
+  opacity: 0.7;
 }
+
+
 
 /* plně obsazený den */
 .booked-full {
