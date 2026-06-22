@@ -99,25 +99,25 @@ function BookingCalendar({ dateRange, setDateRange }) {
         }
       />
 
-      <p className="selected-date">
-        Vybraný termín:{" "}
-        <strong>
-          {dateRange[0]
-            ? dateRange[0].toLocaleDateString()
-            : "—"}
-          {" "}–{" "}
-          {dateRange[1]
-            ? dateRange[1].toLocaleDateString()
-            : "—"}
-        </strong>
-      </p>
+        <p className="selected-date">
+            Vybraný termín:{" "}
+            <strong>
+            {dateRange[0]
+                ? dateRange[0].toLocaleDateString()
+                : "—"}
+            {" "}–{" "}
+            {dateRange[1]
+                ? dateRange[1].toLocaleDateString()
+                : "—"}
+            </strong>
+        </p>
 
-      <button
-  type="button"
-  onClick={() => setDateRange([null, null])}
->
-  Zrušit výběr
-</button>
+        <button
+            type="button"
+            onClick={() => setDateRange([null, null])}
+        >
+            Zrušit výběr
+        </button>
     </div>
   );
 

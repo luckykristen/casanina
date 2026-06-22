@@ -78,6 +78,7 @@
   padding: 14px 32px;
   border-radius: 999px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .btn-link {
