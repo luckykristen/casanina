@@ -1,16 +1,22 @@
-# React + Vite
+## Casa Nina - website of holiday house - About the Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Casa Nina is a responsive web application created for a holiday house in Sardinia. 
+The goal of the project is to provide visitors with a simple and intuitive way to explore the property, 
+check availability, view pricing information, and find everything they need before making a booking inquiry.
 
-Currently, two official plugins are available:
+I built this project using React because it allows me to create reusable components, 
+manage application state efficiently, and build a dynamic user interface. 
+JavaScript was used to handle interactive functionality such as date selection and booking logic, 
+while HTML and CSS were used to create a clean, responsive design that works across different devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+One of the biggest challenges was implementing the booking calendar. 
+I needed to handle different booking scenarios, such as fully booked dates, check-in and check-out restrictions, 
+and date range selection while maintaining a good user experience. 
+Another challenge was keeping the code organized and scalable as the application grew.
 
-## React Compiler
+In the future, I would like to add a backend service to store booking data, implement user authentication, 
+create an admin dashboard for managing reservations, and support multiple languages. 
+I would also like to integrate online booking and payment functionality to make the platform more useful for both guests and property owners.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project helped me strengthen my React and JavaScript skills, improve my understanding of component-based architecture, 
+and gain practical experience building a real-world application.
